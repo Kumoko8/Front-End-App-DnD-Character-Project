@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
-     integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /link>
-     <link rel="stylesheet" src="./bulma.css"
+     integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" 
+     crossorigin="anonymous" 
+     referrerpolicy="no-referrer">
+     
     <title>Document</title>
 </head>
 <body>
-    <div class="tile">
-        <figure class="image">
-            <img src="./assets/DNG.png"
-        </figure>
-    </div>
-    
-
     <header> 
-        <h1> Create Your Own Character </h1>
+        <h1 class="p-5 is-size-2 has-text-danger-dark has-text-centered"> Create Your Own Character </h1>
     </header>
-    <section>
+    <section class="section is-small">
         <button type="button" class="button is-black is-large is-rounded"> Create Character </button>
     </section>
-    <input type="text" placeholder="Character Name" class="character-input">
-    <input type="text" placeholder="Class" class="class-input">
-    <input type="text" placeholder="Race" class="race-input">
-    <h2>Stats</h2>
-    <ul>
-        <li> <input type="text" placeholder="Attack" class="attack-input"> </li>
-        <li> <input type="text" placeholder="Defense" class="defense-input"> </li>
-        <li> <input type="text" placeholder="Dexterity" class="dexterity-input"> </li>
-        <li> <input type="text" placeholder="Charisma" class="charisma-input"> </li>
-        <li> <input type="text" placeholder="Constitution" class="constitution-input"> </li>
+    <input class="m-5" type="text" placeholder="Character Name" class="character-input">
+    <input class="m-5" type="text" placeholder="Class" class="class-input">
+    <input class="m-5" type="text" placeholder="Race" class="race-input">
+    <h2 class=" m-6 is-size-2 has-text-danger-dark">Stats</h2>
+    <ul class="mt-5 is-focus">
+        <li id="attack" class="p-4"> <input type="text" placeholder="Attack" class="attack-input"> </li>
+        <li class="p-4"> <input type="text" placeholder="Defense" class="defense-input"> </li>
+        <li class="p-4"> <input type="text" placeholder="Dexterity" class="dexterity-input"> </li>
+        <li class="p-4"> <input type="text" placeholder="Charisma" class="charisma-input"> </li>
+        <li class="p-4"> <input type="text" placeholder="Constitution" class="constitution-input"> </li>
     </ul>
-    >
+    
 </body>
 </html>
