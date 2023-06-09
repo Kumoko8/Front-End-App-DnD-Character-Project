@@ -3,5 +3,35 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    background-attachment: fixed;
+}
+
+body {
+    border: 25px groove rgb(185, 185, 34);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.char-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(228, 186, 131);
+    border: inset 10px rgb(185, 185, 34);
+    width: fit-content;
+}
+
+.m-5 {
+   background-color: rgb(0, 59, 0); 
+   border: 3px solid rgb(185, 185, 34);
+}
+
+#character-input, #class-input, #race-input {
+    color: white;
+    
 }
 

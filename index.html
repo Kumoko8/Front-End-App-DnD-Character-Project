@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
-     integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" 
-     crossorigin="anonymous" 
-     referrerpolicy="no-referrer">
-     
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <title>DnD Character Generator</title>
 </head>
+
 <body>
-    <header> 
+    <header>
         <h1 class="p-5 is-size-2 has-text-danger-dark has-text-centered"> Create Your Own Character </h1>
     </header>
     <section class="section is-small">
         <button id="generate-btn" type="button" class="button is-black is-large is-rounded"> Create Character </button>
     </section>
-    <input class="m-5" type="text" placeholder="Character Name" class="character-input">
-    <input class="m-5" type="text" placeholder="Class" class="class-input">
-    <input class="m-5" type="text" placeholder="Race" class="race-input">
+    <div class="row">
+        <div class="char-input">
+            <input class="m-5" type="text" placeholder="Character Name" id="character-input">
+            <input class="m-5" type="text" placeholder="Class" id="class-input">
+            <input class="m-5" type="text" placeholder="Race" id="race-input">
+        </div>
+    </div>
     <h2 class=" m-6 is-size-2 has-text-danger-dark">Stats</h2>
     <ul class="mt-5 is-focus">
         <li id="attack" class="p-4"> <input type="text" placeholder="Attack" class="attack-input"> </li>
@@ -33,4 +37,5 @@
     </ul>
     <script src="./java.js"></script>
 </body>
+
 </html>
