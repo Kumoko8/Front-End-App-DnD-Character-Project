@@ -4,15 +4,46 @@ html {
     background-size: cover;
     height: 100%;
     background-attachment: fixed;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
     border: 25px groove rgb(185, 185, 34);
 }
 
+
+
 .row {
     display: flex;
     justify-content: center;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(228, 186, 131);
+    border: groove 10px rgb(185, 185, 34);
+    width: fit-content;
+    margin-top: 20pt;
+    
+}
+
+#generate-btn {
+    background-color: rgb(95, 46, 1);
+    color: rgb(185, 185, 34);
+    font-family: fantasy;
+    border: 10px groove rgb(185, 185, 34);
+    border-radius: 25px 0px 25px 0px;
+    padding: 25px;
+    
+
+}
+
+#script {
+    color: rgb(0, 59, 0);
+    font-weight: bolder;
 }
 
 .char-input {
@@ -21,17 +52,19 @@ body {
     justify-content: center;
     align-content: center;
     background-color: rgb(228, 186, 131);
-    border: inset 10px rgb(185, 185, 34);
+    border: groove 10px rgb(185, 185, 34);
     width: fit-content;
 }
 
 .m-5 {
-   background-color: rgb(0, 59, 0); 
-   border: 3px solid rgb(185, 185, 34);
+    background-color: rgb(95, 46, 1);
+    border: 4px rgb(0, 59, 0);
+    border-style: solid;
+    color: rgb(185, 185, 34);
+    text-align: center;
 }
 
-#character-input, #class-input, #race-input {
-    color: white;
-    
+::placeholder {
+    color: rgb(185, 185, 34);
+    text-align: center;
 }
-
