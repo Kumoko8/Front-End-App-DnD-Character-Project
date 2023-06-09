@@ -33,7 +33,7 @@ body {
 .stats {
     justify-content: center;
     align-content: center;
-    background-image: url("../assets/old-paper-texture.png");
+    background-image: url("Scroll-PNG (1).png");
     background-position-x: center;
     background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
@@ -44,7 +44,7 @@ body {
 
 #generate-btn {
 
-    background-image: url("../assets/red-velvet.png");
+    background-image: url("wood board.jpg");
     background-position-x: center;
     background-position-y: center;
     color: silver;
@@ -71,8 +71,21 @@ body {
 
 }
 
+@keyframes wave{
+ 
+   
+      
+        50% {
+          margin-left: 7%;
+         
+          margin-right: 10%;
+          }
+      
+    }    
+
 #generate-btn:hover {
   
+   animation: wave 1s ease-in-out infinite;
    
  
 }
@@ -92,11 +105,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    background-image: url("../assets/old-paper-texture.png");
+    background-image: url("old-paper-texture.png");
     background-position-x: center;
     background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
+    
 }
 
 .m-5,
