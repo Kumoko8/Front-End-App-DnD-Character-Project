@@ -70,6 +70,7 @@ body {
     border-style: solid;
     color: rgb(185, 185, 34);
     text-align: center;
+     border-radius: 20% 20% 20% 20%;
 }
 
 ::placeholder {
@@ -77,14 +78,3 @@ body {
     text-align: center;
 }
 
-.char {
-    border-radius: 20% 20% 20% 20%;
-}
-
-.class {
-    border-radius: 20% 20% 20% 20%;
-}
-
-.race {
-    border-radius: 20% 20% 20% 20%;
-}
