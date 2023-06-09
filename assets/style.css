@@ -31,14 +31,22 @@ body {
 }
 
 #generate-btn {
-    background-color: rgb(95, 46, 1);
-    color: rgb(185, 185, 34);
+    background-color: rgb(82, 19, 19);
+    color: silver;
     font-family: fantasy;
-    border: 10px groove rgb(185, 185, 34);
+    border: 10px groove silver;
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
     
 
+}
+
+#generate-btn:hover {
+   ;
+}
+
+#generate-btn:active {
+    transform: scale(1.1);
 }
 
 #script {
@@ -67,4 +75,16 @@ body {
 ::placeholder {
     color: rgb(185, 185, 34);
     text-align: center;
+}
+
+.char {
+    border-radius: 20% 20% 20% 20%;
+}
+
+.class {
+    border-radius: 20% 20% 20% 20%;
+}
+
+.race {
+    border-radius: 20% 20% 20% 20%;
 }
