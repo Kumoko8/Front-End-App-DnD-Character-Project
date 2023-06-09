@@ -43,10 +43,14 @@ body {
 }
 
 #generate-btn {
+
     background-image: url("../assets/red-velvet.png");
     background-position-x: center;
     background-position-y: center;
     color: silver;
+  
+    font-family: fantasy;
+
     border: 10px groove silver;
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
@@ -61,6 +65,24 @@ body {
 }
 
 #stat-script {
+
+
+
+
+}
+
+#generate-btn:hover {
+  
+   
+ 
+}
+
+#generate-btn:active {
+    transform: scale(1.1);
+}
+
+#script {
+
     color: rgb(0, 59, 0);
     font-weight: bolder;
 }
@@ -88,9 +110,11 @@ body {
     border-style: solid;
     color: rgb(185, 185, 34);
     text-align: center;
+     border-radius: 20% 20% 20% 20%;
 }
 
 ::placeholder {
     color: rgb(185, 185, 34);
     text-align: center;
 }
+
