@@ -21,7 +21,9 @@ body {
 .header {
     justify-content: center;
     align-content: center;
-    background-color: rgb(228, 186, 131);
+    background-image: url("../assets/images/green-velvet.png");
+    background-position-x: center;
+    background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
     margin-top: 35pt;
@@ -31,7 +33,9 @@ body {
 .stats {
     justify-content: center;
     align-content: center;
-    background-color: rgb(228, 186, 131);
+    background-image: url("../assets/old-paper-texture.png");
+    background-position-x: center;
+    background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
     margin-top: 35pt;
@@ -39,17 +43,24 @@ body {
 }
 
 #generate-btn {
-    background-color: rgb(95, 46, 1);
-    color: rgb(185, 185, 34);
-    font-family: fantasy;
-    border: 10px groove rgb(185, 185, 34);
+    background-image: url("../assets/red-velvet.png");
+    background-position-x: center;
+    background-position-y: center;
+    color: silver;
+    border: 10px groove silver;
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
+    text-decoration: underline;
+}
 
+#header-script {
+    color: rgb(185, 185, 34);
+    font-weight: bolder;
+    font-style: italic;
 
 }
 
-#header-script, #stat-script {
+#stat-script {
     color: rgb(0, 59, 0);
     font-weight: bolder;
 }
@@ -59,12 +70,19 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    background-color: rgb(228, 186, 131);
+    background-image: url("../assets/old-paper-texture.png");
+    background-position-x: center;
+    background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
 }
 
-.m-5, #attack-input, #defense-input, #dexterity-input, #charisma-input, #constitution-input {
+.m-5,
+#attack-input,
+#defense-input,
+#dexterity-input,
+#charisma-input,
+#constitution-input {
     background-color: rgb(95, 46, 1);
     border: 4px rgb(0, 59, 0);
     border-style: solid;
