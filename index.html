@@ -20,11 +20,17 @@
     <section class="section is-small has-text-centered">
         <button id="generate-btn" type="button" class="button is-black is-large is-rounded"> Create Character </button>
     </section>
-    <input class="m-5" type="text" placeholder="Character Name" class="character-input">
-    <input class="m-5" type="text" placeholder="Class" class="class-input">
-    <input class="m-5" type="text" placeholder="Race" class="race-input">
+    <div class="row">
+        <div class="char-input">
+            <div class="has-text-centered">
+                <input class="m-5" type="text" placeholder="Character Name" class="character-input">
+                <input class="m-5" type="text" placeholder="Class" class="class-input">
+                <input class="m-5" type="text" placeholder="Race" class="race-input">
+            </div>
+        </div>
+    </div>
     <h2 class=" m-6 is-size-2 has-text-danger-dark">Stats</h2>
-    <ul class="mt-5 is-focus">
+    <ul class="mt-5 is-focus has-text-centered">
         <li id="attack" class="p-4"> <input type="text" placeholder="Attack" class="attack-input"> </li>
         <li class="p-4"> <input type="text" placeholder="Defense" class="defense-input"> </li>
         <li class="p-4"> <input type="text" placeholder="Dexterity" class="dexterity-input"> </li>
