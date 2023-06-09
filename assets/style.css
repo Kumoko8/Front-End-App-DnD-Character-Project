@@ -31,7 +31,7 @@ body {
 }
 
 #generate-btn {
-    background-color: rgb(82, 19, 19);
+    background-color: rgb(92, 18, 18);
     color: silver;
     font-family: fantasy;
     border: 10px groove silver;
@@ -41,8 +41,26 @@ body {
 
 }
 
+@keyframes button {
+    0% {background-color: rgb(111, 74, 72)}
+    10% {background-color: rgb(110, 76, 73) }
+    20% {background-color: rgb(115, 68, 65)}
+    30% {background-color: rgb(92, 54, 51) ;}
+    40% {background-color: rgb(76, 16, 12) ;}
+    50% {background-color: rgb(77, 17, 13) ;}
+    60% {background-color: rgb(78, 18, 14) ;}
+    70% {background-color: rgb(79, 15, 15) ;}
+    80% {background-color: rgb(93, 20, 20) ;}
+    90% {background-color: rgb(87, 19, 19) ;}
+    100% {background-color: rgb(92, 18, 18) ;}
+
+
+}
+
 #generate-btn:hover {
-   ;
+  
+   
+   animation:backwards button 1s ease-in-out infinite;
 }
 
 #generate-btn:active {
