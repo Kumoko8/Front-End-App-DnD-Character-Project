@@ -72,6 +72,10 @@ body {
 }
 
 @keyframes wave{
+
+    50% {
+        border-radius: 0 25px 0 25px;
+    }
  
    
       
