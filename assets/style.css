@@ -36,7 +36,7 @@ body {
     background-image: url("Scroll-PNG (1).png");
     background-position-x: center;
     background-position-y: center;
-    border: groove 10px rgb(185, 185, 34);
+    border: groove 10px silver;
     width: fit-content;
     margin-top: 35pt;
     margin-bottom: 35pt;
@@ -112,7 +112,7 @@ body {
     background-image: url("old-paper-texture.png");
     background-position-x: center;
     background-position-y: center;
-    border: groove 10px rgb(185, 185, 34);
+    border: groove 10px silver;
     width: fit-content;
     
 }
