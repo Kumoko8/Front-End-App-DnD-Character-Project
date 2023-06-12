@@ -16,7 +16,7 @@ function getClass() {
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
         classEl.textContent = data.index;
-        getRace();
+       
         })
     })
 }
@@ -27,6 +27,10 @@ function getRace(){
     .then(function (response) {
         response.json().then(function (data) {
             console.log(data);
+            var raceEl = document.querySelector("#race-El")
+            raceEl.textContent = data.index;
+            
+
 })
     })
 }
@@ -34,11 +38,29 @@ function getRace(){
 // var raceEl = document.querySelector("#race-El")
 //         raceEl.textContent = data.level;
     
-
+function generateRandomName() {
+    var apiUrl = "https://randomuser.me/api/";
+    fetch(apiUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        var firstName = data.results[0].name.first;
+        var characterNameEl = document.querySelector("#name-El");
+        characterNameEl.textContent = firstName;
+      })
+      
+      };
+  
+  
 
 
 
 
         //create button
 
-        generateBtn.addEventListener("click", getClass);
+        generateBtn.addEventListener("click", function () {
+            generateRandomName();
+            getClass();
+            getRace();
+          });
