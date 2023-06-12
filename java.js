@@ -41,7 +41,9 @@ function getClass() {
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-        
+    
+  
+// generate race
 function getRace(){
     var raceRandom = raceArray[Math.floor(Math.random()*raceArray.length)];
     const races = dndApi + "races/" + raceRandom 
@@ -57,8 +59,7 @@ function getRace(){
     })
 }
 
-// var raceEl = document.querySelector("#race-El")
-//         raceEl.textContent = data.level;
+// generate random name
     
 function generateRandomName() {
     var apiUrl = "https://randomuser.me/api/";
