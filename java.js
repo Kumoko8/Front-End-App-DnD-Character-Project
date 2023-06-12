@@ -16,10 +16,34 @@ function getClass() {
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
         classEl.textContent = data.index;
-       
-        })
-    })
-}
+
+        // Generate random numbers for stats
+        var stats = {
+            attack: getRandomNumber(1, 100),
+            defense: getRandomNumber(1, 100),
+            dexterity: getRandomNumber(1, 100),
+            charisma: getRandomNumber(1, 100),
+            constitution: getRandomNumber(1, 100)
+          };
+  
+          // Populate the stats inputs with the generated numbers
+          document.querySelector("#attack-input").value = stats.attack;
+          document.querySelector("#defense-input").value = stats.defense;
+          document.querySelector("#dexterity-input").value = stats.dexterity;
+          document.querySelector("#charisma-input").value = stats.charisma;
+          document.querySelector("#constitution-input").value = stats.constitution;
+  
+          getRace();
+        });
+      });
+  }
+  
+  function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+    
+  
+// generate race
 function getRace(){
     var raceRandom = raceArray[Math.floor(Math.random()*raceArray.length)];
     const races = dndApi + "races/" + raceRandom 
@@ -35,8 +59,7 @@ function getRace(){
     })
 }
 
-// var raceEl = document.querySelector("#race-El")
-//         raceEl.textContent = data.level;
+// generate random name
     
 function generateRandomName() {
     var apiUrl = "https://randomuser.me/api/";
