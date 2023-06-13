@@ -16,6 +16,7 @@ function getClass() {
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
         classEl.textContent = data.index;
+        localStorage.setItem('character class', data.index);
 
         // Generate random numbers for stats
         var stats = {
@@ -25,6 +26,7 @@ function getClass() {
             charisma: getRandomNumber(1, 100),
             constitution: getRandomNumber(1, 100)
           };
+          localStorage.setItem('character stats', JSON.stringify(stats));
   
           // Populate the stats inputs with the generated numbers
           document.querySelector("#attack-input").value = stats.attack;
@@ -50,9 +52,9 @@ function getRace(){
     fetch(races)
     .then(function (response) {
         response.json().then(function (data) {
-            console.log(data);
             var raceEl = document.querySelector("#race-El")
             raceEl.textContent = data.index;
+            localStorage.setItem('character race', data.index);
             
 
 })
@@ -71,6 +73,7 @@ function generateRandomName() {
         var firstName = data.results[0].name.first;
         var characterNameEl = document.querySelector("#name-El");
         characterNameEl.textContent = firstName;
+        localStorage.setItem('character name', firstName);
       })
       
       };
@@ -88,9 +91,6 @@ function generateRandomName() {
             getRace();
           });
 
-          function saveCharacter(){
 
-          var newChar = race + firstName + stats + classes;
-          localStorage.setItem("character", newChar);
+//Store name, class, race, and all stats
 
-          }
