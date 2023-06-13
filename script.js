@@ -91,6 +91,7 @@ function generateRandomName() {
             getRace();
           });
 
+
 //Get name, class, race, and all stats
 var characterProfile = {
   name: localStorage.getItem('character name'),
