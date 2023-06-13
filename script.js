@@ -99,3 +99,6 @@ var characterProfile = {
   stats: JSON.parse(localStorage.getItem('character stats'))
   
 }
+
+//Store name, class, race, and all stats
+
