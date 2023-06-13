@@ -101,13 +101,19 @@ function saveCharacter() {
     stats: JSON.parse(localStorage.getItem('character stats'))
   }
 
-  var characterProfileSection = document.createElement('div');
-  var characterProfileData = document.createElement('div');
-  characterProfileData.textContent = characterProfile;
+  var characterProfileSection = document.createElement('section');
+  var characterProfileData = document.createElement('section');
+  var characterForm = document.querySelector('#form');
+  characterForm.textContent = 
+
+  characterProfileData.textContent = JSON.stringify(characterProfile);
   characterProfileSection.appendChild(characterProfileData);
+  var profileBlock = document.querySelector("#profile-section");
+  profileBlock.appendChild(characterProfileSection);
 
   saveBtn.addEventListener("click", saveCharacter);
 }
+// on click reveal form with name, class, race, and stats (maybe sliced)
 saveCharacter();
 
 
