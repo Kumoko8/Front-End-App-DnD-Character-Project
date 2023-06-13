@@ -5,6 +5,7 @@ html {
     height: 100%;
     background-attachment: fixed;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 body {
@@ -16,6 +17,13 @@ body {
 .row {
     display: flex;
     justify-content: center;
+}
+
+.row2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+    margin-top: 0%;
 }
 
 .header {
@@ -39,11 +47,9 @@ body {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    margin-top: 35pt;
-    margin-bottom: 35pt;
     padding: 12rem 0;
     width: 30%;
-    
+
 
 
 
@@ -51,7 +57,19 @@ body {
 }
 
 #generate-btn {
+    background-image: url("wood board.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    color: silver;
+    font-family: fantasy;
+    font-style: oblique;
+    border: 10px groove silver;
+    border-radius: 25px 0px 25px 0px;
+    padding: 25px;
+    text-decoration: underline;
+}
 
+#save-btn {
     background-image: url("wood board.jpg");
     background-position-x: center;
     background-position-y: center;
@@ -81,8 +99,8 @@ body {
     border: groove 10px silver;
     padding: 15px;
     font-style: oblique;
-    
-    
+
+
 
 
 
@@ -113,6 +131,17 @@ body {
 }
 
 #generate-btn:active {
+    transform: scale(1.1);
+}
+
+#save-btn:hover {
+
+    animation: wave 1s ease-in-out infinite;
+
+
+}
+
+#save-btn:active {
     transform: scale(1.1);
 }
 
