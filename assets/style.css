@@ -37,12 +37,9 @@ body {
     background-image: url("Scroll-PNG\ \(1\).png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    margin-top: 35pt;
-    margin-bottom: 35pt;
-    padding: 12rem 0;
-    width: 30%;
+    background-position: center;
+    padding: 11rem 0;
+    width: 35%;
     
 
 
@@ -76,8 +73,7 @@ body {
     font-weight: bolder;
     font-style: italic;
     background-image: url("../assets/images/green-velvet.png");
-    background-position-x: center;
-    background-position-y: center;
+    background-position: center;
     border: groove 10px silver;
     padding: 15px;
     font-style: oblique;
