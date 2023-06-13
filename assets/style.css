@@ -27,21 +27,27 @@ body {
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
     margin-top: 35pt;
-    
+
 
 }
 
 .stats {
     justify-content: center;
     align-content: center;
-    background-image: url("Scroll-PNG (1).png");
+    background-image: url("Scroll-PNG\ \(1\).png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    border: groove 10px rgb(185, 185, 34);
-    width: fit-content;
     margin-top: 35pt;
     margin-bottom: 35pt;
-    padding-top: 22px;
+    padding: 10rem 0;
+    width: 30%;
+    
+
+
+
+
 }
 
 #generate-btn {
@@ -50,7 +56,6 @@ body {
     background-position-x: center;
     background-position-y: center;
     color: silver;
-
     font-family: fantasy;
     font-style: oblique;
     border: 10px groove silver;
@@ -74,8 +79,10 @@ body {
     background-position-x: center;
     background-position-y: center;
     border: groove 10px silver;
-    padding: 10pt;
+    padding: 15px;
     font-style: oblique;
+    
+    
 
 
 
@@ -125,7 +132,7 @@ body {
     background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
-    
+
 
 }
 
