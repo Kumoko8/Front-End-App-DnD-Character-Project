@@ -91,4 +91,6 @@ function generateRandomName() {
             getRace();
           });
 
+
 //Store name, class, race, and all stats
+
