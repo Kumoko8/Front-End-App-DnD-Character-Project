@@ -32,6 +32,11 @@ function getClass() {
           document.querySelector("#dexterity-input").value = stats.dexterity;
           document.querySelector("#charisma-input").value = stats.charisma;
           document.querySelector("#constitution-input").value = stats.constitution;
+
+           // Save character details to local storage
+           localStorage.setItem('characterName', document.querySelector("#character-name").value);
+           localStorage.setItem('characterClass', data.index);
+           localStorage.setItem('characterRace', raceEl.textContent);
   
           getRace();
         });
@@ -53,6 +58,9 @@ function getRace(){
             console.log(data);
             var raceEl = document.querySelector("#race-El")
             raceEl.textContent = data.index;
+
+            // Save character race to local storage
+            localStorage.setItem('characterRace', raceEl.textContent);
             
 
 })
