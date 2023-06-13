@@ -41,7 +41,7 @@ body {
     background-position-y: center;
     margin-top: 35pt;
     margin-bottom: 35pt;
-    padding: 10rem 0;
+    padding: 12rem 0;
     width: 30%;
     
 
@@ -150,6 +150,7 @@ body {
     color: silver;
     text-align: center;
     border-radius: 20% 20% 20% 20%;
+    padding: 12px;
 }
 
 ::placeholder {
