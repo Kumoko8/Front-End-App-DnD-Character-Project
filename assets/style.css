@@ -27,19 +27,24 @@ body {
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
     margin-top: 35pt;
-    
+
 
 }
 
 .stats {
-    justify-content: center; 
-    background-image: url("Scroll-PNG (1).png");
+    justify-content: center;
+    align-content: center;
+    background-image: url("Scroll-PNG\ \(1\).png");
     background-size: cover;
     background-repeat: no-repeat;
-    width: 40%; 
     background-position: center;
-    padding: 10rem 0;
-   
+    padding: 11rem 0;
+    width: 35%;
+    
+
+
+
+
 }
 
 #generate-btn {
@@ -48,7 +53,6 @@ body {
     background-position-x: center;
     background-position-y: center;
     color: silver;
-
     font-family: fantasy;
     font-style: oblique;
     border: 10px groove silver;
@@ -71,8 +75,10 @@ body {
     background-image: url("../assets/images/green-velvet.png");
     background-position: center;
     border: groove 10px silver;
-     padding: 10pt; 
+    padding: 15px;
     font-style: oblique;
+    
+    
 
 
 
@@ -122,7 +128,7 @@ body {
     background-position-y: center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
-    
+
 
 }
 
@@ -140,6 +146,7 @@ body {
     color: silver;
     text-align: center;
     border-radius: 20% 20% 20% 20%;
+    padding: 12px;
 }
 
 ::placeholder {

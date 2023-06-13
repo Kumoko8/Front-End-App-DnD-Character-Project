@@ -92,5 +92,14 @@ function generateRandomName() {
           });
 
 
+//Get name, class, race, and all stats
+var characterProfile = {
+  name: localStorage.getItem('character name'),
+  class: localStorage.getItem('character class'),
+  race: localStorage.getItem('character race'),
+  stats: JSON.parse(localStorage.getItem('character stats'))
+  
+}
+
 //Store name, class, race, and all stats
 
