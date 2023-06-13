@@ -2,7 +2,7 @@ var dndApi = "https://www.dnd5eapi.co/api/"
 var generateBtn = document.querySelector("#generate-btn")
 raceArray = ["dragonborn","dwarf","elf","gnome","half-elf","half-orc","halfling","human","tiefling"];
 classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
-
+var saveBtn = document.querySelector("#save-btn");
 
 //get class API
 function getClass() {
@@ -12,7 +12,7 @@ function getClass() {
     fetch(classes)
     .then(function (response) {
         response.json().then(function (data) {
-            console.log(data);
+      
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
         classEl.textContent = data.index;
@@ -83,7 +83,7 @@ function generateRandomName() {
 
 
 
-        //create button
+        //create generate button
 
         generateBtn.addEventListener("click", function () {
             generateRandomName();
@@ -93,13 +93,21 @@ function generateRandomName() {
 
 
 //Get name, class, race, and all stats
-var characterProfile = {
-  name: localStorage.getItem('character name'),
-  class: localStorage.getItem('character class'),
-  race: localStorage.getItem('character race'),
-  stats: JSON.parse(localStorage.getItem('character stats'))
-  
-}
+function saveCharacter() {
+  var characterProfile = {
+    name: localStorage.getItem('character name'),
+    class: localStorage.getItem('character class'),
+    race: localStorage.getItem('character race'),
+    stats: JSON.parse(localStorage.getItem('character stats'))
+  }
 
-//Store name, class, race, and all stats
+  var characterProfileSection = document.createElement('div');
+  var characterProfileData = document.createElement('div');
+  characterProfileData.textContent = characterProfile;
+  characterProfileSection.appendChild(characterProfileData);
+
+  saveBtn.addEventListener("click", saveCharacter);
+}
+saveCharacter();
+
 
