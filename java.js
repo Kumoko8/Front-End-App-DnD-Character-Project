@@ -87,3 +87,10 @@ function generateRandomName() {
             getClass();
             getRace();
           });
+
+          function saveCharacter(){
+
+          var newChar = race + firstName + stats + classes;
+          localStorage.setItem("character", newChar);
+
+          }
