@@ -93,3 +93,4 @@ function generateRandomName() {
 
 
 //Store name, class, race, and all stats
+
