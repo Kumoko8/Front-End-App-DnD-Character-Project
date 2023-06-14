@@ -18,7 +18,8 @@ function getClass() {
       
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
-    
+        classEl.textContent = data.index;
+        // localStorage.setItem('character class', data.index);
         characterProfile.class = data.index;
         classEl.textContent = upperCase(data.index);
       
