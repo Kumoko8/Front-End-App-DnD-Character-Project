@@ -186,9 +186,11 @@ body {
     text-align: center;
 
 }
-/* style for displaying local storage on page
+/*style for displaying local storage on page */
+
 #profile-section {
     color: white;
     display:flex;
     align-content: center;
-    background-color: black; */
+    background-color: black;
+}

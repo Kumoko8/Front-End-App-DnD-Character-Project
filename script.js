@@ -20,11 +20,11 @@ function getClass() {
 
         // Generate random numbers for stats
         var stats = {
-            attack: getRandomNumber(1, 100),
-            defense: getRandomNumber(1, 100),
-            dexterity: getRandomNumber(1, 100),
-            charisma: getRandomNumber(1, 100),
-            constitution: getRandomNumber(1, 100)
+            attack: getRandomNumber(1, 20),
+            defense: getRandomNumber(1, 20),
+            dexterity: getRandomNumber(1, 20),
+            charisma: getRandomNumber(1, 20),
+            constitution: getRandomNumber(1, 20)
           };
           localStorage.setItem('character stats', JSON.stringify(stats));
   
@@ -94,25 +94,52 @@ function generateRandomName() {
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
-  //function saveCharacter() {
+
+  //stats from localstorage
     var displayName = localStorage.getItem('character name')
     var displayClass = localStorage.getItem('character class')
     var displayRace = localStorage.getItem('character race')
-    var displayStats = JSON.parse(localStorage.getItem('character stats'))
-    
-    // var newStats = characterProfile.name; 
-    // newStats.replace(/"/g, '');
+    var displayStats = JSON.stringify(localStorage.getItem('character stats'))
+    //sections for display
+    var profileSection = document.querySelector("#profile-section");
     var characterProfileSection = document.createElement('section');
+//display headings for storage data
     var characterName = document.createElement('h3');
     var characterClass = document.createElement('h3');
     var characterRace = document.createElement('h3');
     var characterStats = document.createElement('h3');
     //var characterForm = document.querySelector('#form');
+    //create sections for each stat
+    var nameSpan = document.createElement("span")
+    var classSpan = document.createElement("span")
+    var raceSpan = document.createElement("span")
+    var statsSpan = document.createElement("span")
+//append the span to each heading
+    characterName.appendChild(nameSpan);
+    characterClass.appendChild(classSpan);
+    characterRace.appendChild(raceSpan);
+    characterStats.appendChild(statsSpan);
+    //set the content of each span
+    nameSpan.textContent = "Name: " + displayName
+    classSpan.textContent = "Class: " + displayClass
+    raceSpan.textContent = "Race: " + displayRace
+    statsSpan.textContent = "Stats: " + displayStats
+
+// append each heading to the section
+    characterProfileSection.appendChild(characterName);
+    characterProfileSection.appendChild(characterClass);
+    characterProfileSection.appendChild(characterRace);
+    characterProfileSection.appendChild(characterStats);
+
+    //set the content of the html section to the profile section
     
-    characterProfileData.textContent = JSON.stringify(characterProfile);
-    characterProfileSection.appendChild(characterProfileData);
-    var profileBlock = document.querySelector("#profile-section");
-    profileBlock.appendChild(characterProfileSection);
+    profileSection.appendChild(characterProfileSection);
+
+
+    
+    //characterProfileData.textContent = JSON.stringify(characterProfile);
+    
+    
 
 });
 
