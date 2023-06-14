@@ -129,9 +129,10 @@ body {
     transform: scale(1.1);
 }
 
+
 #save-btn:hover {
 
-    animation: wave 1s ease-in-out infinite;
+    animation: wave 1s ease-in-out  infinite;
 
 
 }
@@ -184,6 +185,13 @@ body {
 
 }
 
+#race-image {
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    height: 50dvh;
+}
+
 @media screen and (max-width: 900px) {
     .row {
         margin: 0% 10%;
@@ -196,3 +204,12 @@ body {
     }
 }
 
+
+/*style for displaying local storage on page */
+
+#profile-section {
+    color: white;
+    display:flex;
+    align-content: center;
+    background-color: black;
+}
