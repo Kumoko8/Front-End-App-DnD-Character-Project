@@ -93,27 +93,34 @@ function generateRandomName() {
 
 
 //Get name, class, race, and all stats
-function saveCharacter() {
-  var characterProfile = {
-    name: localStorage.getItem('character name'),
-    class: localStorage.getItem('character class'),
-    race: localStorage.getItem('character race'),
-    stats: JSON.parse(localStorage.getItem('character stats'))
-  }
+saveBtn.addEventListener("click", function(){
+  //function saveCharacter() {
+    var displayName = localStorage.getItem('character name')
+    var displayClass = localStorage.getItem('character class')
+    var displayRace = localStorage.getItem('character race')
+    var displayStats = JSON.parse(localStorage.getItem('character stats'))
+    
+    // var newStats = characterProfile.name; 
+    // newStats.replace(/"/g, '');
+    var characterProfileSection = document.createElement('section');
+    var characterName = document.createElement('h3');
+    var characterClass = document.createElement('h3');
+    var characterRace = document.createElement('h3');
+    var characterStats = document.createElement('h3');
+    //var characterForm = document.querySelector('#form');
+    
+    characterProfileData.textContent = JSON.stringify(characterProfile);
+    characterProfileSection.appendChild(characterProfileData);
+    var profileBlock = document.querySelector("#profile-section");
+    profileBlock.appendChild(characterProfileSection);
 
-  var characterProfileSection = document.createElement('section');
-  var characterProfileData = document.createElement('section');
-  var characterForm = document.querySelector('#form');
-  characterForm.textContent = 
+});
 
-  characterProfileData.textContent = JSON.stringify(characterProfile);
-  characterProfileSection.appendChild(characterProfileData);
-  var profileBlock = document.querySelector("#profile-section");
-  profileBlock.appendChild(characterProfileSection);
 
-  saveBtn.addEventListener("click", saveCharacter);
-}
+
+  
+
 // on click reveal form with name, class, race, and stats (maybe sliced)
-saveCharacter();
+
 
 
