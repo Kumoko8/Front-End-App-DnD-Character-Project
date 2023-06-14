@@ -180,6 +180,7 @@ body {
     text-align: center;
     border-radius: 20% 20% 20% 20%;
     padding: 12px;
+    font-size: 1.3rem;
 }
 
 ::placeholder {
@@ -193,4 +194,37 @@ body {
     justify-content:right;
     align-items: center;
     height: 50dvh;
+}
+
+@media screen and (max-width: 900px) {
+    .row {
+        margin: 0% 10%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .stats {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 330px) {
+    .row {
+        margin: 0% 10%;
+    }
+}
+
+@media screen and (min-width: 330px) {
+    .stats {
+        width: 100%;
+    }
+}
+
+/*style for displaying local storage on page */
+
+#profile-section {
+    color: white;
+    display:flex;
+    align-content: center;
+    background-color: black;
 }

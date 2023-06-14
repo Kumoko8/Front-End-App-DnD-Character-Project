@@ -61,7 +61,7 @@ function getRace(){
             var elfURL = "assets/Elf.png";
             var gnomeURL = "assets/Gnome.jpg";
             var halfURL = "assets/Half Elf.jpg";
-            var hOrcURL = "assets\half-orc.jpg";
+            var hOrcURL = "assets/half-orc.jpg";
             var halflingURL = "assets/halfling.jpg";
             var humanURL = "assets/human.jpg";
             var teiflingURL = "assets/tiefling.png";
