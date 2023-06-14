@@ -18,10 +18,10 @@ function getClass() {
       
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
-        classEl.textContent = data.index;
-        // localStorage.setItem('character class', data.index);
+    
         characterProfile.class = data.index;
-        console.log("character class", characterProfile);
+        classEl.textContent = upperCase(data.index);
+      
 
         
         
@@ -61,12 +61,14 @@ function getRace(){
     .then(function (response) {
         response.json().then(function (data) {
             var raceEl = document.querySelector("#race-El")
-            raceEl.textContent = data.index;
             characterProfile.race = data.index;
-            // localStorage.setItem('character race', data.index);
+            raceEl.textContent = upperCase(data.index);
       })
-    })
-  }
+          
+            
+})
+    }
+
 
 // generate random name
     
@@ -164,4 +166,6 @@ saveBtn.addEventListener("click", function(){
 // on click reveal form with name, class, race, and stats (maybe sliced)
 
 
-
+function upperCase(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
