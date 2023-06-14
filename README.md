@@ -13,6 +13,7 @@ This is a random character generator for the role-playing game DnD (Dungeons & D
 
 # Collaborators
 Taylor Golden (github.com/Kumoko8)
+Aaron Garcia (https://github.com/SilvAG6271)
 
 
 # Link to Live Page
