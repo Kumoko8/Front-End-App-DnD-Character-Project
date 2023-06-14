@@ -3,6 +3,9 @@ var generateBtn = document.querySelector("#generate-btn")
 raceArray = ["dragonborn","dwarf","elf","gnome","half-elf","half-orc","halfling","human","tiefling"];
 classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
 var saveBtn = document.querySelector("#save-btn");
+var characterProfile = {
+    
+}
 
 //get class API
 function getClass() {
@@ -16,34 +19,39 @@ function getClass() {
         //populate class random into class input
         var classEl = document.querySelector("#class-El")
         classEl.textContent = data.index;
-        localStorage.setItem('character class', data.index);
+        // localStorage.setItem('character class', data.index);
+        characterProfile.class = data.index;
+        console.log("character class", characterProfile);
 
-        // Generate random numbers for stats
-        var stats = {
-            attack: getRandomNumber(1, 20),
-            defense: getRandomNumber(1, 20),
-            dexterity: getRandomNumber(1, 20),
-            charisma: getRandomNumber(1, 20),
-            constitution: getRandomNumber(1, 20)
-          };
-          localStorage.setItem('character stats', JSON.stringify(stats));
-  
-          // Populate the stats inputs with the generated numbers
-          document.querySelector("#attack-input").value = stats.attack;
-          document.querySelector("#defense-input").value = stats.defense;
-          document.querySelector("#dexterity-input").value = stats.dexterity;
-          document.querySelector("#charisma-input").value = stats.charisma;
-          document.querySelector("#constitution-input").value = stats.constitution;
-  
+        
+        
           getRace();
         });
       });
-  }
+    }
+  // Generate random numbers for stats
+
+function getStats(){
+  var stats = {
+    attack: getRandomNumber(1, 20),
+    defense: getRandomNumber(1, 20),
+    dexterity: getRandomNumber(1, 20),
+    charisma: getRandomNumber(1, 20),
+    constitution: getRandomNumber(1, 20)
+  };
+  characterProfile.stats = stats;
+
+  // Populate the stats inputs with the generated numbers
+  document.querySelector("#attack-input").value = stats.attack;
+  document.querySelector("#defense-input").value = stats.defense;
+  document.querySelector("#dexterity-input").value = stats.dexterity;
+  document.querySelector("#charisma-input").value = stats.charisma;
+  document.querySelector("#constitution-input").value = stats.constitution;
   
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-    
+}
   
 // generate race
 function getRace(){
@@ -54,12 +62,11 @@ function getRace(){
         response.json().then(function (data) {
             var raceEl = document.querySelector("#race-El")
             raceEl.textContent = data.index;
-            localStorage.setItem('character race', data.index);
-            
-
-})
+            characterProfile.race = data.index;
+            // localStorage.setItem('character race', data.index);
+      })
     })
-}
+  }
 
 // generate random name
     
@@ -73,9 +80,9 @@ function generateRandomName() {
         var firstName = data.results[0].name.first;
         var characterNameEl = document.querySelector("#name-El");
         characterNameEl.textContent = firstName;
-        localStorage.setItem('character name', firstName);
-      })
-      
+        characterProfile.name = firstName;
+
+        })
       };
   
   
@@ -89,13 +96,21 @@ function generateRandomName() {
             generateRandomName();
             getClass();
             getRace();
+            getStats();
           });
 
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
-
+  localStorage.setItem(characterProfile.name, JSON.stringify(characterProfile) )
   //stats from localstorage
+  // var characterProfile = {
+  //   name: localStorage.getItem('character name'),
+  //   class: localStorage.getItem('character class'),
+  //   race: localStorage.getItem('character race'),
+  //   stats: JSON.stringify(localStorage.getItem('character stats'))
+  // }
+    // localStorage.setItem('character name', firstName);
     var displayName = localStorage.getItem('character name')
     var displayClass = localStorage.getItem('character class')
     var displayRace = localStorage.getItem('character race')
@@ -139,8 +154,7 @@ saveBtn.addEventListener("click", function(){
     
     //characterProfileData.textContent = JSON.stringify(characterProfile);
     
-    
-
+  
 });
 
 
