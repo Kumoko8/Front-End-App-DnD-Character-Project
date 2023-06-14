@@ -20,11 +20,11 @@ function getClass() {
 
         // Generate random numbers for stats
         var stats = {
-            attack: getRandomNumber(1, 100),
-            defense: getRandomNumber(1, 100),
-            dexterity: getRandomNumber(1, 100),
-            charisma: getRandomNumber(1, 100),
-            constitution: getRandomNumber(1, 100)
+            attack: getRandomNumber(1, 20),
+            defense: getRandomNumber(1, 20),
+            dexterity: getRandomNumber(1, 20),
+            charisma: getRandomNumber(1, 20),
+            constitution: getRandomNumber(1, 20)
           };
           localStorage.setItem('character stats', JSON.stringify(stats));
   
@@ -93,22 +93,62 @@ function generateRandomName() {
 
 
 //Get name, class, race, and all stats
-function saveCharacter() {
-  var characterProfile = {
-    name: localStorage.getItem('character name'),
-    class: localStorage.getItem('character class'),
-    race: localStorage.getItem('character race'),
-    stats: JSON.parse(localStorage.getItem('character stats'))
-  }
+saveBtn.addEventListener("click", function(){
 
-  var characterProfileSection = document.createElement('div');
-  var characterProfileData = document.createElement('div');
-  characterProfileData.textContent = characterProfile;
-  characterProfileSection.appendChild(characterProfileData);
+  //stats from localstorage
+    var displayName = localStorage.getItem('character name')
+    var displayClass = localStorage.getItem('character class')
+    var displayRace = localStorage.getItem('character race')
+    var displayStats = JSON.stringify(localStorage.getItem('character stats'))
+    //sections for display
+    var profileSection = document.querySelector("#profile-section");
+    var characterProfileSection = document.createElement('section');
+//display headings for storage data
+    var characterName = document.createElement('h3');
+    var characterClass = document.createElement('h3');
+    var characterRace = document.createElement('h3');
+    var characterStats = document.createElement('h3');
+    //var characterForm = document.querySelector('#form');
+    //create sections for each stat
+    var nameSpan = document.createElement("span")
+    var classSpan = document.createElement("span")
+    var raceSpan = document.createElement("span")
+    var statsSpan = document.createElement("span")
+//append the span to each heading
+    characterName.appendChild(nameSpan);
+    characterClass.appendChild(classSpan);
+    characterRace.appendChild(raceSpan);
+    characterStats.appendChild(statsSpan);
+    //set the content of each span
+    nameSpan.textContent = "Name: " + displayName
+    classSpan.textContent = "Class: " + displayClass
+    raceSpan.textContent = "Race: " + displayRace
+    statsSpan.textContent = "Stats: " + displayStats
 
-  saveBtn.addEventListener("click", saveCharacter);
-}
-saveCharacter();
+// append each heading to the section
+    characterProfileSection.appendChild(characterName);
+    characterProfileSection.appendChild(characterClass);
+    characterProfileSection.appendChild(characterRace);
+    characterProfileSection.appendChild(characterStats);
+
+    //set the content of the html section to the profile section
+    
+    profileSection.appendChild(characterProfileSection);
+
+
+    
+    //characterProfileData.textContent = JSON.stringify(characterProfile);
+    
+    
+
+});
+
+
+
+  
+
+// on click reveal form with name, class, race, and stats (maybe sliced)
+
 
 function upperCase(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
