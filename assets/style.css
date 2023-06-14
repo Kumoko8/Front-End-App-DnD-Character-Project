@@ -133,9 +133,10 @@ body {
     transform: scale(1.1);
 }
 
+
 #save-btn:hover {
 
-    animation: wave 1s ease-in-out infinite;
+    animation: wave 1s ease-in-out  infinite;
 
 
 }
@@ -179,6 +180,7 @@ body {
     text-align: center;
     border-radius: 20% 20% 20% 20%;
     padding: 12px;
+    font-size: 1.3rem;
 }
 
 ::placeholder {
@@ -186,6 +188,38 @@ body {
     text-align: center;
 
 }
+
+#race-image {
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    height: 50dvh;
+}
+
+@media screen and (max-width: 900px) {
+    .row {
+        margin: 0% 10%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .stats {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 330px) {
+    .row {
+        margin: 0% 10%;
+    }
+}
+
+@media screen and (min-width: 330px) {
+    .stats {
+        width: 100%;
+    }
+}
+
 /*style for displaying local storage on page */
 
 #profile-section {
