@@ -186,7 +186,7 @@ body {
 
 #race-image {
     display: flex;
-    justify-content:right;
+    justify-content:center;
     align-items: center;
     height: 50dvh;
 }
