@@ -64,72 +64,44 @@ function getRace(){
             var raceEl = document.querySelector("#race-El")
             characterProfile.race = data.index;
             raceEl.textContent = upperCase(data.index);
-      })
-           var dragonbornURL = "assets/Dragonborn.jpg";
-            var dwarfURL = "assets/Dwarf.jpg";
-            var elfURL = "assets/Elf.png";
-            var gnomeURL = "assets/Gnome.jpg";
-            var halfURL = "assets/Half Elf.jpg";
-            var hOrcURL = "assets/half-orc.jpg";
-            var halflingURL = "assets/halfling.jpg";
-            var humanURL = "assets/human.jpg";
-            var teiflingURL = "assets/tiefling.png";
+// created an object with all the images as values
+            var raceImages = {
+              dragonborn: "assets/Dragonborn.jpg",
+              dwarf:"assets/Dwarf.jpg",
+              elf:"assets/Elf.png",
+              gnome:"assets/Gnome.jpg",
+              "half-elf":"assets/Half-elf.jpg",
+              "half-orc":"assets/half-orc.jpg",
+               halfling:"assets/halfling.jpg",
+              human:"assets/human.jpg",
+              tiefling:"assets/tiefling.png"
+            };
+// created function to hide all other pictures, basically hide the container til choice is picked              
+                var allImages = document.querySelectorAll("#race-image img");
+                allImages.forEach(function(img){
+                  img.style.display = "none";
+                });
+//attaches image to chosen index from API and appends it to HTML               
+                var imageR = raceImages[data.index];
+        
+                var img = document.getElementById(data.index);
 
-    if (raceRandom  === "dragonborn") {
-    var dragonbornIMG = document.createElement("img");
-    dragonbornIMG.src = dragonbornURL;
-    document.getElementById("race-image").appendChild(dragonbornIMG);
-    dragonbornIMG.width = 200;
-    dragonbornIMG.height = 200;
-    }else if(raceRandom  === "dwarf") {
-     var dwarfIMG = document.createElement("img");
-     dwarfIMG.src = dwarfURL;
-     document.getElementById("race-image").appendChild(dwarfIMG);
-     dwarfIMG.width = 200;
-     dwarfIMG.height = 200;
-    }else if(raceRandom  === "elf") {
-      var elfIMG = document.createElement("img");
-      elfIMG.src = elfURL;
-      document.getElementById("race-image").appendChild(elfIMG);
-      elfIMG.width = 200;
-      elfIMG.height = 200;
-     }else if(raceRandom  === "gnome") {
-      var gnomeIMG = document.createElement("img");
-      gnomeIMG.src = gnomeURL;
-      document.getElementById("race-image").appendChild(gnomeIMG);
-      gnomeIMG.width = 200;
-      gnomeIMG.height = 200;
-     }else if(raceRandom  === "half-elf") {
-      var halfIMG = document.createElement("img");
-      halfIMG.src = halfURL;
-      document.getElementById("race-image").appendChild(halfIMG);
-      halfIMG.width = 200;
-      halfIMG.height = 200;
-     }else if(raceRandom  === "half-orc") {
-      var hOrcIMG = document.createElement("img");
-      hOrcIMG.src = hOrcURL;
-      document.getElementById("race-image").appendChild(hOrcIMG);
-      hOrcIMG.width = 200;
-      hOrcIMG.height = 200;
-     }else if(raceRandom  === "halfling") {
-      var halflingIMG = document.createElement("img");
-      halflingIMG.src = halflingURL;
-      document.getElementById("race-image").appendChild(halflingIMG);
-      halflingIMG.width = 200;
-      halflingIMG.height = 200;
-     }else if(raceRandom  === "human") {
-      var humanIMG = document.createElement("img");
-      humanIMG.src = humanURL;
-      document.getElementById("race-image").appendChild(humanIMG);
-      humanIMG.width = 200;
-      humanIMG.height = 200;
-     }else if(raceRandom  === "tiefling") {
-      var tieflingIMG = document.createElement("img");
-      tieflingIMG.src = teiflingURL;
-      document.getElementById("race-image").appendChild(tieflingIMG);
-      tieflingIMG.width = 200;
-      tieflingIMG.height = 200;
-     }
+                if (!img) {
+                  img = document.createElement("img");
+                  img.id = data.index;
+                  img.src = imageR;
+                  img.alt = data.Index;
+                  document.getElementById("race-image").appendChild(img)
+                }
+               
+
+//sets some styling to image                
+                img.style.display = "block";
+                img.width = 250;
+                img.height = 250;
+                                            
+      })
+
             
 })
     }
