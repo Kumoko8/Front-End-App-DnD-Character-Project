@@ -97,8 +97,8 @@ function getRace(){
 
 //sets some styling to image                
                 img.style.display = "block";
-                img.width = 250;
-                img.height = 250;
+                img.width = 200;
+                
                                             
       })
 
