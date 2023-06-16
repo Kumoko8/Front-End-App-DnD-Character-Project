@@ -6,6 +6,12 @@ var saveBtn = document.querySelector("#save-btn");
 var characterProfile = {
     
 }
+var profileSection = document.querySelector("#profile-section");
+var infoEl = document.querySelector("#info");
+var statsEl = document.querySelector("#stats");
+var storedCharacter =[ ]
+var savedCharacters = [ ]
+
 
 //get class API
 function getClass() {
@@ -109,7 +115,12 @@ function getRace(){
 })
     }
 
-
+  function persistentCharacterRendering (){
+      var characterData = JSON.parse(localStorage.getItem(characterProfile.name));
+      if (characterData)
+        storedCharacter = characterData
+        displayCharacterOnPage();
+    }
 // generate random name
     
 function generateRandomName() {
@@ -125,11 +136,99 @@ function generateRandomName() {
         characterProfile.name = firstName;
 
         })
-      };
+};
+  
+ function displayCharacterOnPage (){
+    infoEl.innerHTML = " "
+    var displayCharacter = JSON.parse(localStorage.getItem("characters"));
+console.log(displayCharacter)
+for (let i = 0; i < displayCharacter.length; i++) {
+  var displayCharacterName = document.createElement("section");
+  var displayCharacterClass = document.createElement("section");
+  var displayCharacterRace = document.createElement("section");
+  var displayCharacterStats = document.createElement("section");
+displayCharacterName.textContent = displayCharacter[i].name
+displayCharacterClass.textContent = displayCharacter[i].class
+displayCharacterRace.textContent = displayCharacter[i].race
+displayCharacterStats.textContent = `Stats ${displayCharacter[i].stats}`
+infoEl.appendChild(displayCharacterName);
+infoEl.appendChild(displayCharacterClass);
+infoEl.appendChild(displayCharacterRace);
+
+}
+    // var displayCharacterClassSection = document.createElement("section");
+    // var displayCharacterRaceSection = document.createElement("section");
+  
+    // var displayCharacterClassTitle = document.createElement("h3");
+    // var displayCharacterRaceTitle = document.createElement("h3");
+  
+    // var displayCharacterClassValue = document.createElement("h3");
+    // var displayCharacterRaceValue = document.createElement("h3");
+  
+    // var displayCharacterStatsSection = document.createElement("section");
+    // var displayCharacterStatsAttack = document.createElement("h3");
+    // var displayCharacterStatsDefense = document.createElement("h3");
+    // var displayCharacterStatsDexterity = document.createElement("h3");
+    // var displayCharacterStatsCharisma = document.createElement("h3");
+    // var displayCharacterStatsConstitution = document.createElement("h3");
+    
+    //display each property in each section
+  
+    // displayCharacterNameTitle.textContent = "Name: ";
+    // displayCharacterClassTitle.textContent = "Class: ";
+    // displayCharacterRaceTitle.textContent = "Race: ";
+  
+    // displayCharacterNameValue.textContent = displayCharacter.name;
+    // displayCharacterClassValue.textContent = displayCharacter.class;
+    // displayCharacterRaceValue.textContent = displayCharacter.race;
   
   
+    // displayCharacterStatsSection.textContent = "Stats: "
+    // //create each individual stat
+    
+    // displayCharacterStatsAttack.textContent = "Attack: " + displayCharacter.stats.attack;
+    // displayCharacterStatsDefense.textContent = "Defense: " + displayCharacter.stats.defense;
+    // displayCharacterStatsDexterity.textContent = "Dexterity: " + displayCharacter.stats.dexterity;
+    // displayCharacterStatsCharisma.textContent = "Charisma: " + displayCharacter.stats.charisma;
+    // displayCharacterStatsConstitution.textContent = "Constitution: " + displayCharacter.stats.constitution;
+  
+  
+    // nameClassRaceSection.appendChild(displayCharacterNameSection);
+    // displayCharacterNameSection.appendChild(displayCharacterNameTitle);
+    // displayCharacterNameSection.appendChild(displayCharacterNameValue)
+  
+    // nameClassRaceSection.appendChild(displayCharacterClassSection);
+    // displayCharacterClassSection.appendChild(displayCharacterClassTitle);
+    // displayCharacterClassSection.appendChild(displayCharacterClassValue);
+  
+    // nameClassRaceSection.appendChild(displayCharacterRaceSection);
+    // displayCharacterRaceSection.appendChild(displayCharacterRaceTitle);
+    // displayCharacterRaceSection.appendChild(displayCharacterRaceValue);
+  
+    
+    // statsSection.appendChild(displayCharacterStatsSection);
+    // displayCharacterStatsSection.appendChild(displayCharacterStatsAttack);
+    // displayCharacterStatsSection.appendChild(displayCharacterStatsDefense);
+    // displayCharacterStatsSection.appendChild(displayCharacterStatsDexterity);
+    // displayCharacterStatsSection.appendChild(displayCharacterStatsCharisma);
+    // displayCharacterStatsSection.appendChild(displayCharacterStatsConstitution);
+  
+    // document.getElementById("profile-section").style.color = "white";
+    // displayCharacterStatsSection.style.fontWeight = "bold"
+    // displayCharacterStatsSection.style.padding = "5%"
+    // nameClassRaceSection.style.padding = "5%"
+    // displayCharacterNameTitle.style.fontWeight = "bold"
+    // displayCharacterClassTitle.style.fontWeight = "bold"
+    // displayCharacterRaceTitle.style.fontWeight = "bold"
+
+    
+    
 
 
+  }
+
+
+  
 
 
         //create generate button
@@ -144,6 +243,15 @@ function generateRandomName() {
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
+
+  savedCharacters = JSON.parse(localStorage.getItem("characters"))||[]
+  let character = characterProfile
+  savedCharacters.push(character)
+  console.log(savedCharacters);
+  localStorage.setItem("characters", JSON.stringify(savedCharacters))
+  
+  displayCharacterOnPage();
+
   localStorage.setItem(characterProfile.name, JSON.stringify(characterProfile) )
   //stats from localstorage
   // var characterProfile = {
@@ -196,7 +304,14 @@ saveBtn.addEventListener("click", function(){
     
     //characterProfileData.textContent = JSON.stringify(characterProfile);
    
+
   
+//     var displayName = localStorage.getItem('character name')
+//     var displayClass = localStorage.getItem('character class')
+//     var displayRace = localStorage.getItem('character race')
+//     var displayStats = JSON.stringify(localStorage.getItem('character stats'))
+//     //create sections for display
+
 });
 
 
@@ -209,6 +324,9 @@ saveBtn.addEventListener("click", function(){
 function upperCase(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
+
+persistentCharacterRendering();
+displayCharacterOnPage();
 
 
 function clearInfo() {
