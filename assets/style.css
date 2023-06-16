@@ -189,8 +189,8 @@ body {
     justify-content:center;
     align-items: center;
     height: 55dvh;
-   
-   
+    margin-bottom: 7%;
+
     
 }
 
@@ -206,17 +206,7 @@ body {
     }
 }
 
-@media screen and (min-width: 330px) {
-    .row {
-        margin: 0% 10%;
-    }
-}
 
-@media screen and (min-width: 330px) {
-    .stats {
-        width: 100%;
-    }
-}
 /*style for displaying local storage on page */
 
 #profile-section {
