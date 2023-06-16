@@ -82,7 +82,7 @@ function getRace(){
               human:"assets/human.jpg",
               tiefling:"assets/tiefling.png"
             };
-// created function to hide all other pictures, basically hide the container til choice is picked              
+// created function to hide all other pictures, basically hide the images til choice is picked from index             
                 var allImages = document.querySelectorAll("#race-image img");
                 allImages.forEach(function(img){
                   img.style.display = "none";
@@ -103,10 +103,13 @@ function getRace(){
 
 //sets some styling to image                
                 img.style.display = "block";
-                img.width = 200;
-                
-                                            
+
+          img.width = 200;
+          img.style.border = "10px silver groove"
+        img.style.borderRadius = "80px 80px 80px 80px"        
+        img.style.boxShadow = "0px 0px 25px blue"                                    
       })
+
 
             
 })
@@ -240,6 +243,7 @@ infoEl.appendChild(displayCharacterRace);
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
+
   savedCharacters = JSON.parse(localStorage.getItem("characters"))||[]
   let character = characterProfile
   savedCharacters.push(character)
@@ -247,6 +251,60 @@ saveBtn.addEventListener("click", function(){
   localStorage.setItem("characters", JSON.stringify(savedCharacters))
   
   displayCharacterOnPage();
+
+  localStorage.setItem(characterProfile.name, JSON.stringify(characterProfile) )
+  //stats from localstorage
+  // var characterProfile = {
+  //   name: localStorage.getItem('character name'),
+  //   class: localStorage.getItem('character class'),
+  //   race: localStorage.getItem('character race'),
+  //   stats: JSON.stringify(localStorage.getItem('character stats'))
+  // }
+    // localStorage.setItem('character name', firstName);
+    var displayName = localStorage.getItem('character name')
+    var displayClass = localStorage.getItem('character class')
+    var displayRace = localStorage.getItem('character race')
+    var displayStats = JSON.stringify(localStorage.getItem('character stats'))
+    //sections for display
+    var profileSection = document.querySelector("#profile-section");
+    var characterProfileSection = document.createElement('section');
+//display headings for storage data
+    var characterName = document.createElement('h3');
+    var characterClass = document.createElement('h3');
+    var characterRace = document.createElement('h3');
+    var characterStats = document.createElement('h3');
+    //var characterForm = document.querySelector('#form');
+    //create sections for each stat
+    var nameSpan = document.createElement("span")
+    var classSpan = document.createElement("span")
+    var raceSpan = document.createElement("span")
+    var statsSpan = document.createElement("span")
+//append the span to each heading
+    characterName.appendChild(nameSpan);
+    characterClass.appendChild(classSpan);
+    characterRace.appendChild(raceSpan);
+    characterStats.appendChild(statsSpan);
+    //set the content of each span
+    nameSpan.textContent = "Name: " + displayName
+    classSpan.textContent = "Class: " + displayClass
+    raceSpan.textContent = "Race: " + displayRace
+    statsSpan.textContent = "Stats: " + displayStats
+
+// append each heading to the section
+    characterProfileSection.appendChild(characterName);
+    characterProfileSection.appendChild(characterClass);
+    characterProfileSection.appendChild(characterRace);
+    characterProfileSection.appendChild(characterStats);
+
+    //set the content of the html section to the profile section
+    
+    profileSection.appendChild(characterProfileSection);
+
+
+    
+    //characterProfileData.textContent = JSON.stringify(characterProfile);
+   
+
   
 //     var displayName = localStorage.getItem('character name')
 //     var displayClass = localStorage.getItem('character class')
@@ -269,3 +327,19 @@ function upperCase(string) {
 
 persistentCharacterRendering();
 displayCharacterOnPage();
+
+
+function clearInfo() {
+  document.getElementById("name-El").value = "";
+  document.getElementById("class-El").value = "";
+  document.getElementById("race-El").value = "";
+  document.getElementById("attack-input").value = "";
+  document.getElementById("defense-input").value = "";
+  document.getElementById("dexterity-input").value = "";
+  document.getElementById("charisma-input").value = "";
+  document.getElementById("constitution-input").value = "";
+}
+
+saveBtn.addEventListener("click", function(){
+  clearInfo()
+});
