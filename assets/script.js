@@ -76,7 +76,7 @@ function getRace(){
               human:"assets/human.jpg",
               tiefling:"assets/tiefling.png"
             };
-// created function to hide all other pictures, basically hide the container til choice is picked              
+// created function to hide all other pictures, basically hide the images til choice is picked from index             
                 var allImages = document.querySelectorAll("#race-image img");
                 allImages.forEach(function(img){
                   img.style.display = "none";
@@ -97,11 +97,13 @@ function getRace(){
 
 //sets some styling to image                
                 img.style.display = "block";
+
           img.width = 200;
           img.style.border = "10px silver groove"
         img.style.borderRadius = "80px 80px 80px 80px"        
         img.style.boxShadow = "0px 0px 25px blue"                                    
       })
+
 
             
 })
@@ -193,7 +195,7 @@ saveBtn.addEventListener("click", function(){
 
     
     //characterProfileData.textContent = JSON.stringify(characterProfile);
-    
+   
   
 });
 
@@ -207,3 +209,19 @@ saveBtn.addEventListener("click", function(){
 function upperCase(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
+
+
+function clearInfo() {
+  document.getElementById("name-El").value = "";
+  document.getElementById("class-El").value = "";
+  document.getElementById("race-El").value = "";
+  document.getElementById("attack-input").value = "";
+  document.getElementById("defense-input").value = "";
+  document.getElementById("dexterity-input").value = "";
+  document.getElementById("charisma-input").value = "";
+  document.getElementById("constitution-input").value = "";
+}
+
+saveBtn.addEventListener("click", function(){
+  clearInfo()
+});
