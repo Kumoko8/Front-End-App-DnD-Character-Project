@@ -217,10 +217,17 @@ body {
     }
 }
 /*style for displaying local storage on page */
+body {
+    position: relative;
+}
 
 #profile-section {
     color: white;
     display:flex;
-    align-content: center;
-    background-color: black;
+    width: 33%;
+    border-radius: 5%;
+    background-color: maroon;
+    position:absolute;
+    bottom: 5%;
+        
 }
