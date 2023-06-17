@@ -1,4 +1,5 @@
 var dndApi = "https://www.dnd5eapi.co/api/"
+var clearBtn = document.querySelector("#clear");
 var generateBtn = document.querySelector("#generate-btn")
 raceArray = ["dragonborn","dwarf","elf","gnome","half-elf","half-orc","halfling","human","tiefling"];
 classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
@@ -97,11 +98,10 @@ function getRace(){
 
 //sets some styling to image                
                 img.style.display = "block";
-
-          img.width = 200;
-          img.style.border = "10px silver groove"
-        img.style.borderRadius = "80px 80px 80px 80px"        
-        img.style.boxShadow = "0px 0px 25px blue"                                    
+                img.width = 200;
+                img.style.border = "10px silver groove"
+                img.style.borderRadius = "80px 80px 80px 80px"        
+                img.style.boxShadow = "0px 0px 25px blue"                                    
       })
 
 
@@ -211,17 +211,18 @@ function upperCase(string) {
 }
 
 
-function clearInfo() {
-  document.getElementById("name-El").value = "";
-  document.getElementById("class-El").value = "";
-  document.getElementById("race-El").value = "";
-  document.getElementById("attack-input").value = "";
-  document.getElementById("defense-input").value = "";
-  document.getElementById("dexterity-input").value = "";
-  document.getElementById("charisma-input").value = "";
-  document.getElementById("constitution-input").value = "";
-}
+// function clearInfo() {
+//   document.getElementById("name-El").value = "";
+//   document.getElementById("class-El").value = "";
+//   document.getElementById("race-El").value = "";
+//   document.getElementById("attack-input").value = "";
+//   document.getElementById("defense-input").value = "";
+//   document.getElementById("dexterity-input").value = "";
+//   document.getElementById("charisma-input").value = "";
+//   document.getElementById("constitution-input").value = "";
+// }
 
-saveBtn.addEventListener("click", function(){
-  clearInfo()
-});
+// saveBtn.addEventListener("click", function(){
+//   clearInfo()
+//});
+
