@@ -8,7 +8,6 @@ var characterProfile = {
 }
 var profileSection = document.querySelector("#profile-section");
 var infoEl = document.querySelector("#info");
-var statsEl = document.querySelector("#stats");
 var storedCharacter =[ ]
 var savedCharacters = [ ]
 
@@ -147,80 +146,32 @@ for (let i = 0; i < displayCharacter.length; i++) {
   var displayCharacterClass = document.createElement("section");
   var displayCharacterRace = document.createElement("section");
   var displayCharacterStats = document.createElement("section");
-displayCharacterName.textContent = displayCharacter[i].name
-displayCharacterClass.textContent = displayCharacter[i].class
-displayCharacterRace.textContent = displayCharacter[i].race
-displayCharacterStats.textContent = `Stats ${displayCharacter[i].stats}`
+  var displayCharacterAttack = document.createElement("section");
+  var displayCharacterDefense = document.createElement("section");
+  var displayCharacterDexterity = document.createElement("section");
+  var displayCharacterCharisma = document.createElement("section");
+  var displayCharacterConstitution = document.createElement("section");
+
+displayCharacterName.textContent = `Name: ${displayCharacter[i].name}`
+displayCharacterClass.textContent = `Class: ${displayCharacter[i].class}`
+displayCharacterRace.textContent = `Race: ${displayCharacter[i].race}`
+displayCharacterStats.textContent = `Stats: `
+displayCharacterAttack.textContent = `Attack: ${displayCharacter[i].stats.attack}`
+displayCharacterDefense.textContent = `Defense: ${displayCharacter[i].stats.defense}`
+displayCharacterDexterity.textContent = `Dexterity: ${displayCharacter[i].stats.dexterity}`
+displayCharacterCharisma.textContent = `Charisma: ${displayCharacter[i].stats.charisma}`
+displayCharacterConstitution.textContent = `Constitution: ${displayCharacter[i].stats.constitution}`
 infoEl.appendChild(displayCharacterName);
 infoEl.appendChild(displayCharacterClass);
 infoEl.appendChild(displayCharacterRace);
+infoEl.appendChild(displayCharacterStats);
+infoEl.appendChild(displayCharacterAttack);
+infoEl.appendChild(displayCharacterDefense);
+infoEl.appendChild(displayCharacterDexterity);
+infoEl.appendChild(displayCharacterCharisma);
+infoEl.appendChild(displayCharacterConstitution);
 
 }
-    // var displayCharacterClassSection = document.createElement("section");
-    // var displayCharacterRaceSection = document.createElement("section");
-  
-    // var displayCharacterClassTitle = document.createElement("h3");
-    // var displayCharacterRaceTitle = document.createElement("h3");
-  
-    // var displayCharacterClassValue = document.createElement("h3");
-    // var displayCharacterRaceValue = document.createElement("h3");
-  
-    // var displayCharacterStatsSection = document.createElement("section");
-    // var displayCharacterStatsAttack = document.createElement("h3");
-    // var displayCharacterStatsDefense = document.createElement("h3");
-    // var displayCharacterStatsDexterity = document.createElement("h3");
-    // var displayCharacterStatsCharisma = document.createElement("h3");
-    // var displayCharacterStatsConstitution = document.createElement("h3");
-    
-    //display each property in each section
-  
-    // displayCharacterNameTitle.textContent = "Name: ";
-    // displayCharacterClassTitle.textContent = "Class: ";
-    // displayCharacterRaceTitle.textContent = "Race: ";
-  
-    // displayCharacterNameValue.textContent = displayCharacter.name;
-    // displayCharacterClassValue.textContent = displayCharacter.class;
-    // displayCharacterRaceValue.textContent = displayCharacter.race;
-  
-  
-    // displayCharacterStatsSection.textContent = "Stats: "
-    // //create each individual stat
-    
-    // displayCharacterStatsAttack.textContent = "Attack: " + displayCharacter.stats.attack;
-    // displayCharacterStatsDefense.textContent = "Defense: " + displayCharacter.stats.defense;
-    // displayCharacterStatsDexterity.textContent = "Dexterity: " + displayCharacter.stats.dexterity;
-    // displayCharacterStatsCharisma.textContent = "Charisma: " + displayCharacter.stats.charisma;
-    // displayCharacterStatsConstitution.textContent = "Constitution: " + displayCharacter.stats.constitution;
-  
-  
-    // nameClassRaceSection.appendChild(displayCharacterNameSection);
-    // displayCharacterNameSection.appendChild(displayCharacterNameTitle);
-    // displayCharacterNameSection.appendChild(displayCharacterNameValue)
-  
-    // nameClassRaceSection.appendChild(displayCharacterClassSection);
-    // displayCharacterClassSection.appendChild(displayCharacterClassTitle);
-    // displayCharacterClassSection.appendChild(displayCharacterClassValue);
-  
-    // nameClassRaceSection.appendChild(displayCharacterRaceSection);
-    // displayCharacterRaceSection.appendChild(displayCharacterRaceTitle);
-    // displayCharacterRaceSection.appendChild(displayCharacterRaceValue);
-  
-    
-    // statsSection.appendChild(displayCharacterStatsSection);
-    // displayCharacterStatsSection.appendChild(displayCharacterStatsAttack);
-    // displayCharacterStatsSection.appendChild(displayCharacterStatsDefense);
-    // displayCharacterStatsSection.appendChild(displayCharacterStatsDexterity);
-    // displayCharacterStatsSection.appendChild(displayCharacterStatsCharisma);
-    // displayCharacterStatsSection.appendChild(displayCharacterStatsConstitution);
-  
-    // document.getElementById("profile-section").style.color = "white";
-    // displayCharacterStatsSection.style.fontWeight = "bold"
-    // displayCharacterStatsSection.style.padding = "5%"
-    // nameClassRaceSection.style.padding = "5%"
-    // displayCharacterNameTitle.style.fontWeight = "bold"
-    // displayCharacterClassTitle.style.fontWeight = "bold"
-    // displayCharacterRaceTitle.style.fontWeight = "bold"
-
     
     
 
@@ -252,66 +203,7 @@ saveBtn.addEventListener("click", function(){
   
   displayCharacterOnPage();
 
-  localStorage.setItem(characterProfile.name, JSON.stringify(characterProfile) )
-  //stats from localstorage
-  // var characterProfile = {
-  //   name: localStorage.getItem('character name'),
-  //   class: localStorage.getItem('character class'),
-  //   race: localStorage.getItem('character race'),
-  //   stats: JSON.stringify(localStorage.getItem('character stats'))
-  // }
-    // localStorage.setItem('character name', firstName);
-    var displayName = localStorage.getItem('character name')
-    var displayClass = localStorage.getItem('character class')
-    var displayRace = localStorage.getItem('character race')
-    var displayStats = JSON.stringify(localStorage.getItem('character stats'))
-    //sections for display
-    var profileSection = document.querySelector("#profile-section");
-    var characterProfileSection = document.createElement('section');
-//display headings for storage data
-    var characterName = document.createElement('h3');
-    var characterClass = document.createElement('h3');
-    var characterRace = document.createElement('h3');
-    var characterStats = document.createElement('h3');
-    //var characterForm = document.querySelector('#form');
-    //create sections for each stat
-    var nameSpan = document.createElement("span")
-    var classSpan = document.createElement("span")
-    var raceSpan = document.createElement("span")
-    var statsSpan = document.createElement("span")
-//append the span to each heading
-    characterName.appendChild(nameSpan);
-    characterClass.appendChild(classSpan);
-    characterRace.appendChild(raceSpan);
-    characterStats.appendChild(statsSpan);
-    //set the content of each span
-    nameSpan.textContent = "Name: " + displayName
-    classSpan.textContent = "Class: " + displayClass
-    raceSpan.textContent = "Race: " + displayRace
-    statsSpan.textContent = "Stats: " + displayStats
-
-// append each heading to the section
-    characterProfileSection.appendChild(characterName);
-    characterProfileSection.appendChild(characterClass);
-    characterProfileSection.appendChild(characterRace);
-    characterProfileSection.appendChild(characterStats);
-
-    //set the content of the html section to the profile section
-    
-    profileSection.appendChild(characterProfileSection);
-
-
-    
-    //characterProfileData.textContent = JSON.stringify(characterProfile);
-   
-
-  
-//     var displayName = localStorage.getItem('character name')
-//     var displayClass = localStorage.getItem('character class')
-//     var displayRace = localStorage.getItem('character race')
-//     var displayStats = JSON.stringify(localStorage.getItem('character stats'))
-//     //create sections for display
-
+ 
 });
 
 
