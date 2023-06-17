@@ -104,11 +104,10 @@ function getRace(){
 
 //sets some styling to image                
                 img.style.display = "block";
-
-          img.width = 200;
-          img.style.border = "10px silver groove"
-        img.style.borderRadius = "80px 80px 80px 80px"        
-        img.style.boxShadow = "0px 0px 25px blue"                                    
+                img.width = 200;
+                img.style.border = "10px silver groove"
+                img.style.borderRadius = "80px 80px 80px 80px"        
+                img.style.boxShadow = "0px 0px 25px blue"                                    
       })
 
 
