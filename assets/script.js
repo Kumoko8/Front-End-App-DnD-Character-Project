@@ -1,12 +1,18 @@
 var dndApi = "https://www.dnd5eapi.co/api/"
-var clearBtn = document.querySelector("#clear");
 var generateBtn = document.querySelector("#generate-btn")
 raceArray = ["dragonborn","dwarf","elf","gnome","half-elf","half-orc","halfling","human","tiefling"];
 classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
 var saveBtn = document.querySelector("#save-btn");
+var resetBtn = document.querySelector("#reset-btn");
 var characterProfile = {
     
 }
+var info = document.querySelector("info");
+var profileSection = document.querySelector("#profile-section");
+var infoEl = document.querySelector("#info");
+var storedCharacter =[ ]
+var savedCharacters = [ ]
+
 
 //get class API
 function getClass() {
@@ -98,10 +104,11 @@ function getRace(){
 
 //sets some styling to image                
                 img.style.display = "block";
-                img.width = 200;
-                img.style.border = "10px silver groove"
-                img.style.borderRadius = "80px 80px 80px 80px"        
-                img.style.boxShadow = "0px 0px 25px blue"                                    
+
+          img.width = 200;
+          img.style.border = "10px silver groove"
+        img.style.borderRadius = "80px 80px 80px 80px"        
+        img.style.boxShadow = "0px 0px 25px blue"                                    
       })
 
 
@@ -109,7 +116,12 @@ function getRace(){
 })
     }
 
-
+  function persistentCharacterRendering (){
+      var characterData = JSON.parse(localStorage.getItem("characters"));
+      if (characterData)
+        storedCharacter = characterData
+        displayCharacterOnPage();
+    }
 // generate random name
     
 function generateRandomName() {
@@ -125,11 +137,52 @@ function generateRandomName() {
         characterProfile.name = firstName;
 
         })
-      };
+};
   
-  
+ function displayCharacterOnPage (){
+    infoEl.innerHTML = " "
+    var displayCharacter = JSON.parse(localStorage.getItem("characters"));
+for (let i = 0; i < displayCharacter.length; i++) {
+  var displayCharacterName = document.createElement("section");
+  var displayCharacterClass = document.createElement("section");
+  var displayCharacterRace = document.createElement("section");
+  var displayCharacterStats = document.createElement("section");
+  var displayCharacterAttack = document.createElement("section");
+  var displayCharacterDefense = document.createElement("section");
+  var displayCharacterDexterity = document.createElement("section");
+  var displayCharacterCharisma = document.createElement("section");
+  var displayCharacterConstitution = document.createElement("section");
+  displayCharacterConstitution.classList.add("pad-btm");
+displayCharacterName.textContent = `Name: ${displayCharacter[i].name}`
+displayCharacterClass.textContent = `Class: ${displayCharacter[i].class}`
+displayCharacterRace.textContent = `Race: ${displayCharacter[i].race}`
+displayCharacterStats.textContent = `Stats: `
+displayCharacterAttack.textContent = `Attack: ${displayCharacter[i].stats.attack}`
+displayCharacterDefense.textContent = `Defense: ${displayCharacter[i].stats.defense}`
+displayCharacterDexterity.textContent = `Dexterity: ${displayCharacter[i].stats.dexterity}`
+displayCharacterCharisma.textContent = `Charisma: ${displayCharacter[i].stats.charisma}`
+displayCharacterConstitution.textContent = `Constitution: ${displayCharacter[i].stats.constitution}`
+infoEl.appendChild(displayCharacterName);
+infoEl.appendChild(displayCharacterClass);
+infoEl.appendChild(displayCharacterRace);
+infoEl.appendChild(displayCharacterStats);
+infoEl.appendChild(displayCharacterAttack);
+infoEl.appendChild(displayCharacterDefense);
+infoEl.appendChild(displayCharacterDexterity);
+infoEl.appendChild(displayCharacterCharisma);
+infoEl.appendChild(displayCharacterConstitution);
+document.getElementById("info").style.visibility ="visible";
 
 
+}
+    
+    
+
+
+  }
+
+
+  
 
 
         //create generate button
@@ -139,67 +192,27 @@ function generateRandomName() {
             getClass();
             getRace();
             getStats();
+          
           });
 
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
-  localStorage.setItem(characterProfile.name, JSON.stringify(characterProfile) )
-  //stats from localstorage
-  // var characterProfile = {
-  //   name: localStorage.getItem('character name'),
-  //   class: localStorage.getItem('character class'),
-  //   race: localStorage.getItem('character race'),
-  //   stats: JSON.stringify(localStorage.getItem('character stats'))
-  // }
-    // localStorage.setItem('character name', firstName);
-    var displayName = localStorage.getItem('character name')
-    var displayClass = localStorage.getItem('character class')
-    var displayRace = localStorage.getItem('character race')
-    var displayStats = JSON.stringify(localStorage.getItem('character stats'))
-    //sections for display
-    var profileSection = document.querySelector("#profile-section");
-    var characterProfileSection = document.createElement('section');
-//display headings for storage data
-    var characterName = document.createElement('h3');
-    var characterClass = document.createElement('h3');
-    var characterRace = document.createElement('h3');
-    var characterStats = document.createElement('h3');
-    //var characterForm = document.querySelector('#form');
-    //create sections for each stat
-    var nameSpan = document.createElement("span")
-    var classSpan = document.createElement("span")
-    var raceSpan = document.createElement("span")
-    var statsSpan = document.createElement("span")
-//append the span to each heading
-    characterName.appendChild(nameSpan);
-    characterClass.appendChild(classSpan);
-    characterRace.appendChild(raceSpan);
-    characterStats.appendChild(statsSpan);
-    //set the content of each span
-    nameSpan.textContent = "Name: " + displayName
-    classSpan.textContent = "Class: " + displayClass
-    raceSpan.textContent = "Race: " + displayRace
-    statsSpan.textContent = "Stats: " + displayStats
-
-// append each heading to the section
-    characterProfileSection.appendChild(characterName);
-    characterProfileSection.appendChild(characterClass);
-    characterProfileSection.appendChild(characterRace);
-    characterProfileSection.appendChild(characterStats);
-
-    //set the content of the html section to the profile section
-    
-    profileSection.appendChild(characterProfileSection);
-
-
-    
-    //characterProfileData.textContent = JSON.stringify(characterProfile);
-   
+  savedCharacters = JSON.parse(localStorage.getItem("characters"))||[]
+  let character = characterProfile
+  savedCharacters.push(character)
+  console.log(savedCharacters);
+  localStorage.setItem("characters", JSON.stringify(savedCharacters))
   
+  displayCharacterOnPage();
+
+ 
 });
 
-
+resetBtn.addEventListener("click", function(){
+  localStorage.clear();
+  document.getElementById("info").style.visibility ="hidden";
+})
 
   
 
@@ -209,6 +222,9 @@ saveBtn.addEventListener("click", function(){
 function upperCase(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
+
+persistentCharacterRendering();
+displayCharacterOnPage();
 
 
 // function clearInfo() {
@@ -222,7 +238,6 @@ function upperCase(string) {
 //   document.getElementById("constitution-input").value = "";
 // }
 
-// saveBtn.addEventListener("click", function(){
-//   clearInfo()
-//});
-
+//  saveBtn.addEventListener("click", function(){
+//    clearInfo()
+// });
