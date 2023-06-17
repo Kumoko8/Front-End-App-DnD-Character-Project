@@ -227,6 +227,7 @@ persistentCharacterRendering();
 displayCharacterOnPage();
 
 
+
 // function clearInfo() {
 //   document.getElementById("name-El").value = "";
 //   document.getElementById("class-El").value = "";
@@ -241,3 +242,4 @@ displayCharacterOnPage();
 //  saveBtn.addEventListener("click", function(){
 //    clearInfo()
 // });
+
