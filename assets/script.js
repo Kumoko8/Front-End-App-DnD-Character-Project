@@ -171,7 +171,8 @@ infoEl.appendChild(displayCharacterDefense);
 infoEl.appendChild(displayCharacterDexterity);
 infoEl.appendChild(displayCharacterCharisma);
 infoEl.appendChild(displayCharacterConstitution);
-document.getElementById("info").style.visibility ="visible";
+document.getElementById("profile-section").style.visibility ="visible";
+
 
 
 }
@@ -188,6 +189,7 @@ document.getElementById("info").style.visibility ="visible";
         //create generate button
 
         generateBtn.addEventListener("click", function () {
+          document.getElementById("race-image").style.visibility ="visible";
             generateRandomName();
             getClass();
             getRace();
@@ -211,7 +213,8 @@ saveBtn.addEventListener("click", function(){
 
 resetBtn.addEventListener("click", function(){
   localStorage.clear();
-  document.getElementById("info").style.visibility ="hidden";
+  document.getElementById("profile-section").style.visibility ="hidden";
+  document.getElementById("race-image").style.visibility ="hidden";
 })
 
   
