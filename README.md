@@ -12,8 +12,10 @@ This is a random character generator for the role-playing game DnD (Dungeons & D
 
 
 # Collaborators
-Taylor Golden (github.com/Kumoko8)
+Alex Colwell (https://github.com/Fuzzy-Codes)
+Taylor Golden (https://github.com/Kumoko8)
 Aaron Garcia (https://github.com/SilvAG6271)
+Fernanda Cordovez (https://github.com/Knitsy)
 
 
 # Link to Live Page
@@ -28,6 +30,6 @@ MIT
 DnD e5 API
 https://www.dnd5eapi.co/docs/#get-/api/classes/-index-/levels
 
-Pinterest API
-https://developers.pinterest.com/apps/
+Random User Generator API
+https://randomuser.me/
 
