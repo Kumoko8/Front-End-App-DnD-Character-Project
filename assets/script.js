@@ -1,5 +1,4 @@
 var dndApi = "https://www.dnd5eapi.co/api/"
-var clearBtn = document.querySelector("#clear");
 var generateBtn = document.querySelector("#generate-btn")
 raceArray = ["dragonborn","dwarf","elf","gnome","half-elf","half-orc","halfling","human","tiefling"];
 classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
