@@ -40,6 +40,7 @@ body {
 }
 
 .stats {
+    display: inline;
     justify-content: center;
     align-content: center;
     background-image: url("Scroll-PNG\ \(1\).png");
@@ -203,10 +204,16 @@ body {
 
 #race-image {
     display: flex;
+    display: inline-table;
+    align-content: center;
     justify-content:center;
     align-items: center;
-    height: 55dvh;
-    margin-bottom: 7%;
+    height: flex;
+    /* margin-bottom: 7%; */
+    /* position: absolute;
+    left: 20%;
+    top: 30%; */
+    
 
     
 }
@@ -231,16 +238,21 @@ body {
 
 #profile-section {
     color: white;
-    width: 33%;
+    display:flex;
+    width: 20%;
     border-radius: 5%;
     background-color: maroon;
-    position:absolute;
-    bottom: 5%;
-  
-
-        
+    display:block;
+    /* position:absolute;
+    bottom: 5%; */
+    text-align: center;
+    align-content: center;
+    justify-content: center;
 }
 
+.info {
+    width:auto;
+}
 .pad-btm {
     padding-bottom: 8%;
 }
