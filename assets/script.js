@@ -3,9 +3,11 @@ var generateBtn = document.querySelector("#generate-btn")
 raceArray = ["dragonborn","dwarf","elf","gnome","half-elf","half-orc","halfling","human","tiefling"];
 classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
 var saveBtn = document.querySelector("#save-btn");
+var resetBtn = document.querySelector("#reset-btn");
 var characterProfile = {
     
 }
+var info = document.querySelector("info");
 var profileSection = document.querySelector("#profile-section");
 var infoEl = document.querySelector("#info");
 var storedCharacter =[ ]
@@ -115,7 +117,7 @@ function getRace(){
     }
 
   function persistentCharacterRendering (){
-      var characterData = JSON.parse(localStorage.getItem(characterProfile.name));
+      var characterData = JSON.parse(localStorage.getItem("characters"));
       if (characterData)
         storedCharacter = characterData
         displayCharacterOnPage();
@@ -140,7 +142,6 @@ function generateRandomName() {
  function displayCharacterOnPage (){
     infoEl.innerHTML = " "
     var displayCharacter = JSON.parse(localStorage.getItem("characters"));
-console.log(displayCharacter)
 for (let i = 0; i < displayCharacter.length; i++) {
   var displayCharacterName = document.createElement("section");
   var displayCharacterClass = document.createElement("section");
@@ -151,7 +152,7 @@ for (let i = 0; i < displayCharacter.length; i++) {
   var displayCharacterDexterity = document.createElement("section");
   var displayCharacterCharisma = document.createElement("section");
   var displayCharacterConstitution = document.createElement("section");
-
+  displayCharacterConstitution.classList.add("pad-btm");
 displayCharacterName.textContent = `Name: ${displayCharacter[i].name}`
 displayCharacterClass.textContent = `Class: ${displayCharacter[i].class}`
 displayCharacterRace.textContent = `Race: ${displayCharacter[i].race}`
@@ -170,6 +171,8 @@ infoEl.appendChild(displayCharacterDefense);
 infoEl.appendChild(displayCharacterDexterity);
 infoEl.appendChild(displayCharacterCharisma);
 infoEl.appendChild(displayCharacterConstitution);
+document.getElementById("info").style.visibility ="visible";
+
 
 }
     
@@ -189,12 +192,12 @@ infoEl.appendChild(displayCharacterConstitution);
             getClass();
             getRace();
             getStats();
+          
           });
 
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
-
   savedCharacters = JSON.parse(localStorage.getItem("characters"))||[]
   let character = characterProfile
   savedCharacters.push(character)
@@ -206,7 +209,10 @@ saveBtn.addEventListener("click", function(){
  
 });
 
-
+resetBtn.addEventListener("click", function(){
+  localStorage.clear();
+  document.getElementById("info").style.visibility ="hidden";
+})
 
   
 
@@ -221,17 +227,17 @@ persistentCharacterRendering();
 displayCharacterOnPage();
 
 
-function clearInfo() {
-  document.getElementById("name-El").value = "";
-  document.getElementById("class-El").value = "";
-  document.getElementById("race-El").value = "";
-  document.getElementById("attack-input").value = "";
-  document.getElementById("defense-input").value = "";
-  document.getElementById("dexterity-input").value = "";
-  document.getElementById("charisma-input").value = "";
-  document.getElementById("constitution-input").value = "";
-}
+// function clearInfo() {
+//   document.getElementById("name-El").value = "";
+//   document.getElementById("class-El").value = "";
+//   document.getElementById("race-El").value = "";
+//   document.getElementById("attack-input").value = "";
+//   document.getElementById("defense-input").value = "";
+//   document.getElementById("dexterity-input").value = "";
+//   document.getElementById("charisma-input").value = "";
+//   document.getElementById("constitution-input").value = "";
+// }
 
-saveBtn.addEventListener("click", function(){
-  clearInfo()
-});
+//  saveBtn.addEventListener("click", function(){
+//    clearInfo()
+// });

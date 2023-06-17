@@ -56,19 +56,6 @@ body {
 
 }
 
-#generate-btn {
-    background-image: url("wood board.jpg");
-    background-position-x: center;
-    background-position-y: center;
-    color: silver;
-    font-family: 'Tangerine', cursive;
-    font-size: 2.5rem;
-    border: 10px groove silver;
-    border-radius: 25px 0px 25px 0px;
-    padding: 25px;
-    text-decoration: underline;
-}
-
 #save-btn {
     background-image: url("wood board.jpg");
     background-position-x: center;
@@ -82,6 +69,30 @@ body {
     text-decoration: underline;
 }
 
+#generate-btn {
+    background-image: url("wood board.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    color: silver;
+    font-family: 'Tangerine', cursive;
+    font-size: 2.5rem;
+    border: 10px groove silver;
+    border-radius: 25px 0px 25px 0px;
+    padding: 25px;
+    text-decoration: underline;
+}
+#reset-btn {
+    background-image: url("wood board.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    color: silver;
+    font-family: 'Tangerine', cursive;
+    font-size: 2.5rem;
+    border: 10px groove silver;
+    border-radius: 25px 0px 25px 0px;
+    padding: 25px;
+    text-decoration: underline;
+}
 #header-script {
     color: rgb(241, 99, 4);
     font-weight: bolder;
@@ -134,13 +145,18 @@ body {
 
     animation: wave 1s ease-in-out  infinite;
 
-
 }
 
 #save-btn:active {
     transform: scale(1.1);
 }
 
+#reset-btn:hover {
+    animation: wave 1s ease-in-out infinite;
+}
+#reset-btn:active{
+    transform: scale(1.1);
+}
 #script {
 
     color: rgb(0, 59, 0);
@@ -215,11 +231,20 @@ body {
 
 #profile-section {
     color: white;
-    display:flex;
     width: 33%;
     border-radius: 5%;
     background-color: maroon;
     position:absolute;
     bottom: 5%;
+  
+
         
+}
+
+.pad-btm {
+    padding-bottom: 8%;
+}
+
+.hide {
+    display: none;
 }
