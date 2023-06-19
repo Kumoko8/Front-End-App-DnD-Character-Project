@@ -24,21 +24,26 @@
             </header>
         </div>
     </div>
-    <section >
-        <button class="button is-normal" id="reset-btn" type="button"> Reset </button>
-    </section>
+
     <section class="section is-small has-text-centered">
         <button id="generate-btn" type="button" class="button is-large"> Create Character </button>
-        <div class="row2">
-            <section >
-                <button class="button is-large" id="save-btn" type="button" onclick="visibility:visible"> Save Character </button>
+        <div class="row">
+            <section>
+                <button class="button is-large" id="save-btn" type="button" onclick="visibility:visible"> Save Character
+                </button>
             </section>
-            
         </div>
-        <div id="race-image">
+        <div class="row">
+            <section>
+                <button class="button is-large" id="reset-btn" type="button"> Reset </button>
+            </section>
         </div>
         
+        <div id="race-image">
+        </div>
+
     </section>
+
     <section id="profile-section">
         <section id="info">
 
@@ -47,7 +52,7 @@
     <div class="row">
         <div class="char-input">
             <div id="char-info" class="has-text-centered">
-                
+
 
                 <textarea id="name-El" contentEditable="true" class="m-5" type="text" placeholder="Character Name"
                     class="character-input" cols="25" rows="2"></textarea>
@@ -59,36 +64,36 @@
         </div>
     </div>
 
-                    
-                    <div class="row">
-                        <div class="stats m-3">
-                            <h2 class="m-6 has-text-centered" id="stat-script">Stats</h2>
-                            <ul class="mt-5 is-focus has-text-centered">
-                                <h6 class="has-text-black is-size-4 has-text-weight-bold">Attack</h6>
-                                <li id="attack" class="p-4"> <input type="text" placeholder="Attack" id="attack-input"> </li>
-                                <h6 class="has-text-black is-size-4 has-text-weight-bold">Defense</h6>
-                                <li class="p-4"> <input type="text" placeholder="Defense" id="defense-input"> </li>
-                                <h6 class="has-text-black is-size-4 has-text-weight-bold">Dexterity</h6>
-                                <li class="p-4"> <input type="text" placeholder="Dexterity" id="dexterity-input"> </li>
-                                <h6 class="has-text-black is-size-4 has-text-weight-bold">Charisma</h6>
-                                <li class="p-4"> <input type="text" placeholder="Charisma" id="charisma-input"> </li>
-                                <h6 class="has-text-black is-size-4 has-text-weight-bold">Constitution</h6>
-                                <li class="p-4" id="bottom"> <input type="text" placeholder="Constitution" id="constitution-input">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-            
-        
-     
 
-    
-    
-    
-            
-              
+    <div class="row">
+        <div class="stats m-3">
+            <h2 class="m-6 has-text-centered" id="stat-script">Stats</h2>
+            <ul class="mt-5 is-focus has-text-centered">
+                <h6 class="has-text-black is-size-4 has-text-weight-bold">Attack</h6>
+                <li id="attack" class="p-4"> <input type="text" placeholder="Attack" id="attack-input"> </li>
+                <h6 class="has-text-black is-size-4 has-text-weight-bold">Defense</h6>
+                <li class="p-4"> <input type="text" placeholder="Defense" id="defense-input"> </li>
+                <h6 class="has-text-black is-size-4 has-text-weight-bold">Dexterity</h6>
+                <li class="p-4"> <input type="text" placeholder="Dexterity" id="dexterity-input"> </li>
+                <h6 class="has-text-black is-size-4 has-text-weight-bold">Charisma</h6>
+                <li class="p-4"> <input type="text" placeholder="Charisma" id="charisma-input"> </li>
+                <h6 class="has-text-black is-size-4 has-text-weight-bold">Constitution</h6>
+                <li class="p-4" id="bottom"> <input type="text" placeholder="Constitution" id="constitution-input">
+                </li>
+            </ul>
+        </div>
+    </div>
 
-    
+
+
+
+
+
+
+
+
+
+
 
 
     <script src="assets\script.js"></script>

@@ -22,8 +22,16 @@ body {
 .row2 {
     display: flex;
     justify-content: center;
-    margin-bottom: 3%;
     margin-top: 0%;
+    
+}
+
+.row3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 0%;
+
 }
 
 .header {
@@ -59,8 +67,8 @@ body {
 
 #save-btn {
     background-image: url("wood board.jpg");
-    background-position-x: center;
-    background-position-y: center;
+    background-position: center;
+    margin: 1rem;
     color: silver;
     font-family: 'Tangerine', cursive;
     font-size: 2.5rem;
@@ -83,15 +91,12 @@ body {
     text-decoration: underline;
 }
 #reset-btn {
-    position: absolute;
-    top:0;
-    right: 0;
-    margin: 1rem;
     background-image: url("wood board.jpg");
     background-position: center;
+    margin: 1rem;
     color: silver;
     font-family: 'Tangerine', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
     border: 10px groove silver;
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
@@ -155,6 +160,12 @@ body {
     transform: scale(1.1);
 }
 
+#reset-btn:hover {
+
+    animation: wave 1s ease-in-out infinite;
+
+}
+
 
 #reset-btn:active{
     transform: scale(1.1);
@@ -172,7 +183,7 @@ body {
     align-content: center;
     background-position: center;
     background-image: url("old-paper-texture.png");
-    border-style: groove rgb(185, 185, 34);
+    border: groove 10px rgb(185, 185, 34);
     width:fit-content;
 } 
 
@@ -203,16 +214,18 @@ body {
 
 
 @media screen and (max-width: 900px) {
-    .row {
+    .row, .char-input {
         margin: 0% 10%;
     }
 }
+
 
 @media screen and (max-width: 900px) {
     .stats {
         width: 100%;
     }
 }
+
 
 
 /*style for displaying local storage on page */
@@ -223,9 +236,11 @@ body {
 #profile-section {
     color: white;
     display:flex;
+    flex-wrap: wrap;
     width: 10%;
     border-radius: 5%;
     background-image: url("red-velvet.png");
+    border: groove 10px silver;
     display:block;
      position:absolute;
     top: 15%; 
@@ -235,8 +250,20 @@ body {
     margin:2rem;
 }
 
-.info {
+#race-image {
+    display: flex;
+    justify-content: center;
+}
+
+#info {
+    
     width:auto;
+    justify-content: left;
+    
+    color: silver;
+    font-size: 1.05rem;
+    
+
 }
 .pad-btm {
     padding-bottom: 8%;
