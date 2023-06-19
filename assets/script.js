@@ -107,7 +107,7 @@ function getRace(){
                 img.width = 200;
                 img.style.border = "10px silver groove"
                 img.style.borderRadius = "80px 80px 80px 80px"        
-                img.style.boxShadow = "0px 0px 25px blue"                                    
+                img.style.boxShadow = "0px 0px 20px blue"                                    
       })
 
 
@@ -170,7 +170,9 @@ infoEl.appendChild(displayCharacterDefense);
 infoEl.appendChild(displayCharacterDexterity);
 infoEl.appendChild(displayCharacterCharisma);
 infoEl.appendChild(displayCharacterConstitution);
-document.getElementById("profile-section").style.visibility ="visible";
+  document.getElementById("profile-section").style.visibility = "visible";
+  document.getElementById("profile-section").style.border = "groove 10px silver";
+  
 
 
 
