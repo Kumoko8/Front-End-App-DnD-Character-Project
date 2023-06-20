@@ -135,6 +135,7 @@ function generateRandomName() {
   
  function displayCharacterOnPage (){
     infoEl.innerHTML = " "
+    // document.getElementById("info").style.visibility ="visible";
     var displayCharacter = JSON.parse(localStorage.getItem("characters"));
 for (let i = 0; i < displayCharacter.length; i++) {
   var displayCharacterName = document.createElement("section");
@@ -165,8 +166,7 @@ infoEl.appendChild(displayCharacterDefense);
 infoEl.appendChild(displayCharacterDexterity);
 infoEl.appendChild(displayCharacterCharisma);
 infoEl.appendChild(displayCharacterConstitution);
-
-
+document.getElementById("profile-section").style.visibility ="visible";
 document.getElementById("profile-section").style.border = "10px silver groove";
 
 
@@ -195,16 +195,18 @@ document.getElementById("profile-section").style.border = "10px silver groove";
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
-  localStorage.setItem("characters", JSON.stringify(savedCharacters))
   savedCharacters = JSON.parse(localStorage.getItem("characters"))||[]
   let character = characterProfile
   savedCharacters.push(character)
+  console.log(savedCharacters)
+  localStorage.setItem("characters", JSON.stringify(savedCharacters))
   displayCharacterOnPage(); 
 });
 
 resetBtn.addEventListener("click", function(){
   localStorage.clear();
   document.getElementById("profile-section").style.visibility ="hidden";
+  // document.getElementById("info").style.visibility ="hidden";
   document.getElementById("race-image").style.visibility ="hidden";
 })
 
