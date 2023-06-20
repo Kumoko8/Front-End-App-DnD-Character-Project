@@ -251,7 +251,12 @@ body {
     width: 10%;
     border-radius: 5%;
     background-image: url("red-velvet.png");
+ 
+    display: block;
+
+
     position: absolute;
+
     top: 15%; 
     text-align: center;
     align-content: center;
