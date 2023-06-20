@@ -174,6 +174,7 @@ infoEl.appendChild(displayCharacterConstitution);
   document.getElementById("profile-section").style.border = "groove 10px silver";
   
 
+document.getElementById("profile-section").style.border = "10px silver groove";
 
 
 }
@@ -232,18 +233,4 @@ displayCharacterOnPage();
 
 
 
-// function clearInfo() {
-//   document.getElementById("name-El").value = "";
-//   document.getElementById("class-El").value = "";
-//   document.getElementById("race-El").value = "";
-//   document.getElementById("attack-input").value = "";
-//   document.getElementById("defense-input").value = "";
-//   document.getElementById("dexterity-input").value = "";
-//   document.getElementById("charisma-input").value = "";
-//   document.getElementById("constitution-input").value = "";
-// }
-
-//  saveBtn.addEventListener("click", function(){
-//    clearInfo()
-// });
 

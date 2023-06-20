@@ -71,10 +71,19 @@ body {
     padding: 25px;
     text-decoration: underline;
 }
-#reset-btn {
+
+ .button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem;
+ }
+
+ #reset-btn {
     background-image: url("wood board.jpg");
     background-position: center;
+
     margin-top: 2rem;
+
     color: silver;
     font-family: 'Tangerine', cursive;
     font-size: 2.5rem;
@@ -82,7 +91,8 @@ body {
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
     text-decoration: underline;
-}
+    } 
+
 #header-script {
     color: rgb(241, 99, 4);
     font-weight: bolder;
@@ -167,6 +177,10 @@ body {
     
 } 
 
+#race-image {
+    
+}
+
 .m-5,
 #attack-input,
 #defense-input,
@@ -219,15 +233,23 @@ body {
     color: white;
     display:flex;
     background-image: url("red-velvet.png");
-    display: inline-block;
+
+
     top: 15%; 
     text-align: center;
     align-content: center;
     justify-content: center;
+
     margin: 2rem;
     min-width: fit-content;
     
     
+
+    
+   border:none;
+   
+  
+
 }
 
 #race-image {
@@ -250,3 +272,9 @@ body {
 .hide {
     display: none;
 }
+
+ @media (max-width: 768) {
+    #profile-section{
+        transform: scale(2);
+    }
+} 
