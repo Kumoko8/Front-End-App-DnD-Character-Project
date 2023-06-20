@@ -233,7 +233,7 @@ body {
     color: white;
     display:flex;
     background-image: url("red-velvet.png");
-
+    display: block;
 
     top: 15%; 
     text-align: center;
