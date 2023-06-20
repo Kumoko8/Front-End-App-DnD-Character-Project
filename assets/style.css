@@ -19,20 +19,6 @@ body {
     justify-content: center;
 }
 
-.row2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 0%;
-    
-}
-
-.row3 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5%;
-    margin-top: 0%;
-
-}
 
 .header {
     justify-content: center;
@@ -57,18 +43,11 @@ body {
     background-position: center;
     padding: 11rem 0;
     width: 35%;
-    
-
-
-
-
-
 }
 
 #save-btn {
     background-image: url("wood board.jpg");
     background-position: center;
-    margin: 1rem;
     color: silver;
     font-family: 'Tangerine', cursive;
     font-size: 2.5rem;
@@ -76,6 +55,8 @@ body {
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
     text-decoration: underline;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 #generate-btn {
@@ -100,6 +81,9 @@ body {
  #reset-btn {
     background-image: url("wood board.jpg");
     background-position: center;
+
+    margin-top: 2rem;
+
     color: silver;
     font-family: 'Tangerine', cursive;
     font-size: 2.5rem;
@@ -114,8 +98,6 @@ body {
     font-weight: bolder;
     font-family: 'Tangerine', cursive;
     font-size: 5rem;
-    
-
 }
 
 #stat-script {
@@ -192,6 +174,7 @@ body {
     background-image: url("old-paper-texture.png");
     border: groove 10px rgb(185, 185, 34);
     width:fit-content;
+    
 } 
 
 #race-image {
@@ -212,8 +195,9 @@ body {
     color: silver;
     text-align: center;
     border-radius: 20% 20% 20% 20%;
-    padding: 12px;
-    font-size: 1.3rem;
+    
+    margin: 0 10px;
+    font-size: 1.05rem;
 }
 
 ::placeholder {
@@ -239,6 +223,7 @@ body {
 
 
 
+
 /*style for displaying local storage on page */
 body {
     position: relative;
@@ -247,19 +232,24 @@ body {
 #profile-section {
     color: white;
     display:flex;
-    flex-wrap: wrap;
-    width: 10%;
-    border-radius: 5%;
     background-image: url("red-velvet.png");
-    position: absolute;
+
+
     top: 15%; 
     text-align: center;
     align-content: center;
     justify-content: center;
-    margin:2rem;
+
+    margin: 2rem;
+    min-width: fit-content;
+    
+    
+
+    
    border:none;
    
   
+
 }
 
 #race-image {
@@ -268,14 +258,12 @@ body {
 }
 
 #info {
-    
     width:auto;
     justify-content: left;
-    
     color: silver;
+    padding: 3%;
+    margin: 3%;
     font-size: 1.05rem;
-    
-
 }
 .pad-btm {
     padding-bottom: 8%;
