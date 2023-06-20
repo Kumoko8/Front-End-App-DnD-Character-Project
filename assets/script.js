@@ -5,9 +5,7 @@ classArray = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladi
 var saveBtn = document.querySelector("#save-btn");
 var resetBtn = document.querySelector("#reset-btn");
 var characterProfile = {
-    
 }
-var info = document.querySelector("info");
 var profileSection = document.querySelector("#profile-section");
 var infoEl = document.querySelector("#info");
 var storedCharacter =[ ]
@@ -29,10 +27,7 @@ function getClass() {
         // localStorage.setItem('character class', data.index);
         characterProfile.class = data.index;
         classEl.textContent = upperCase(data.index);
-      
-
-        
-        
+    
           getRace();
         });
       });
@@ -200,15 +195,11 @@ document.getElementById("profile-section").style.border = "10px silver groove";
 
 //Get name, class, race, and all stats
 saveBtn.addEventListener("click", function(){
+  localStorage.setItem("characters", JSON.stringify(savedCharacters))
   savedCharacters = JSON.parse(localStorage.getItem("characters"))||[]
   let character = characterProfile
   savedCharacters.push(character)
-  console.log(savedCharacters);
-  localStorage.setItem("characters", JSON.stringify(savedCharacters))
-  
-  displayCharacterOnPage();
-
- 
+  displayCharacterOnPage(); 
 });
 
 resetBtn.addEventListener("click", function(){
