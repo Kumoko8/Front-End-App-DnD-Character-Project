@@ -1,4 +1,4 @@
-# Group-Project-1-WebApp
+# Front-End-App-DnD-Character-Project
 
 # Description
 
@@ -24,7 +24,7 @@ Fernanda Cordovez (https://github.com/Knitsy)
 
 
 # Link to Live Page
-https://kumoko8.github.io/Group-Project-1-WebApp/
+https://kumoko8.github.io/Front-End-App-DnD-Character-Project/
 
 # License
 
