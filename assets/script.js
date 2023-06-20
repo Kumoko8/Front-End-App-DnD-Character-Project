@@ -172,6 +172,7 @@ infoEl.appendChild(displayCharacterCharisma);
 infoEl.appendChild(displayCharacterConstitution);
 document.getElementById("profile-section").style.visibility ="visible";
 
+document.getElementById("profile-section").style.border = "10px silver groove";
 
 
 }
