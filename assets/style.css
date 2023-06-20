@@ -19,7 +19,7 @@ body {
     justify-content: center;
 }
 
-.row2 {
+/* .row2 {
     display: flex;
     justify-content: center;
     margin-top: 0%;
@@ -32,23 +32,20 @@ body {
     margin-bottom: 5%;
     margin-top: 0%;
 
-}
+} */
 
 .header {
     justify-content: center;
     align-content: center;
     background-image: url("../assets/images/green-velvet.png");
-    background-position-x: center;
-    background-position-y: center;
+    background-position:center;
     border: groove 10px rgb(185, 185, 34);
     width: fit-content;
     margin-top: 35pt;
-
-
 }
 
 .stats {
-  
+    flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     background-image: url("Scroll-PNG\ \(1\).png");
@@ -57,12 +54,6 @@ body {
     background-position: center;
     padding: 11rem 0;
     width: 35%;
-    
-
-
-
-
-
 }
 
 #save-btn {
@@ -76,12 +67,13 @@ body {
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
     text-decoration: underline;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 #generate-btn {
     background-image: url("wood board.jpg");
     background-position: center;
-    margin: 1rem;
     color: silver;
     font-family: 'Tangerine', cursive;
     font-size: 2.5rem;
@@ -89,12 +81,15 @@ body {
     border-radius: 25px 0px 25px 0px;
     padding: 25px;
     text-decoration: underline;
+    margin-top: 2rem;
 }
 
  .button-container{
     display: flex;
-    justify-content: flex-end;
-    margin: 2rem;
+    justify-content:flex-end;
+    flex-flow: row;
+    margin-right: 1dvw;
+    
  }
 
  #reset-btn {
@@ -167,9 +162,25 @@ body {
     transform: scale(1.1);
 }
 
+@keyframes reset {
+
+    50% {
+        border-radius: 0 25px 0 25px;
+    }
+
+
+
+    50% {
+        margin-left: 5%;
+
+        margin-right: 2%;
+    }
+
+}
+
 #reset-btn:hover {
 
-    animation: wave 1s ease-in-out infinite;
+    animation: reset 1s ease-in-out infinite;
 
 }
 
@@ -195,10 +206,23 @@ body {
 } 
 
 #race-image {
-    
+   display: flex;
+   justify-content: center;
 }
 
-.m-5,
+.m-5{
+    background-image: url("red-velvet.png");
+    background-position-x: center;
+    background-position-y: center;
+    border: 4px silver;
+    border-style: inset;
+    color: silver;
+    text-align: center;
+    border-radius: 20%;
+    padding: 2%;
+    font-size: 1.05rem;
+}
+
 #attack-input,
 #defense-input,
 #dexterity-input,
@@ -211,9 +235,9 @@ body {
     border-style: inset;
     color: silver;
     text-align: center;
-    border-radius: 20% 20% 20% 20%;
-    padding: 12px;
-    font-size: 1.3rem;
+    border-radius: 20%;
+    padding: 2%;
+    font-size: 2dvw;
 }
 
 ::placeholder {
@@ -242,41 +266,36 @@ body {
 /*style for displaying local storage on page */
 body {
     position: relative;
-}
+} 
 
 #profile-section {
     color: white;
     display:flex;
     flex-wrap: wrap;
     width: 10%;
-    border-radius: 5%;
+    border-radius: 5%; 
     background-image: url("red-velvet.png");
-    position: absolute;
+    /* background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+    display: inline-block;
     top: 15%; 
     text-align: center;
     align-content: center;
     justify-content: center;
-    margin:2rem;
-   border:none;
+    margin:2rem; 
+     min-width: fit-content;  
+   }
+
    
-  
-}
 
 #race-image {
     display: flex;
     justify-content: center;
 }
 
-#info {
-    
-    width:auto;
-    justify-content: left;
-    
-    color: silver;
-    font-size: 1.05rem;
-    
+ 
 
-}
 .pad-btm {
     padding-bottom: 8%;
 }
